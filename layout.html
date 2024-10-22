@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>landing Page</title>
+    <style>
+      .head-bar {
+        height: 15px;
+        background-color: #4489d1;
+        min-width: 1440px;
+      }
+
+        header{
+            min-width: 1440px;
+            height: 90px;
+            background-color: #232F64;
+        }
+        header .header-logo{
+            margin-top: 14px;
+            margin-bottom: 14px;
+        }
+        header .header-container{
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        header .profile{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 18px;
+        }
+        header h3 {
+            text-align: end;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            color: white;
+            margin-right: 15px;
+            font-family: "SFProBold", Arial, sans-serif;
+        }
+        header .profile-pic{
+            border-radius: 50%;
+            border: 2px solid #806801;
+            background-color: #FFE780;
+        }
+
+        @font-face {
+            font-family: "SFProBold";
+            src: url("./fonts/sfpro/SF-Pro-Text-Bold.otf") format("opentype");
+            font-weight: normal;
+            font-style: italic;
+        }
+        @font-face {
+            font-family: "SFProRegular";
+            src: url("./fonts/sfpro/SF-Pro-Text-Regular.otf") format("opentype");
+            font-weight: normal;
+            font-style: italic;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow: auto;
+        }
+        .head-bar {
+            height: 15px;
+            background-color: #4489d1;
+            min-width: 1440px;
+        }
+        header {
+            min-width: 1440px;
+            height: 90px;
+            background-color: #232F64;
+        }
+       
+        header .header-container {
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+        header .profile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        header h3 {
+            text-align: end;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            color: white;
+            margin-right: 15px;
+            font-family: "SFProBold", Arial, sans-serif;
+        }
+        header .profile-pic {
+            border-radius: 50%;
+            border: 2px solid #806801;
+            background-color: #FFE780;
+            cursor: pointer;
+        }
+        .profile .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 70px;
+            right: 0;
+            background-color: white;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .profile .dropdown-menu a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-family: "SFProRegular", Arial, sans-serif;
+        }
+        .dropdown-menu a:hover {
+            background-color: #f1f1f1;
+        }
+        main {
+             flex: 1;
+         }
+
+        footer{
+            min-width: 1440px;
+            margin-left: auto;
+            margin-right: auto;
+            /* position: relative;
+            bottom: 5px; */
+        }
+        footer .footer-container{
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 40px;
+        }
+        footer p {
+            margin: 0;
+            margin-bottom: 5px;
+            width: 427px;
+            line-height: 16px;
+            margin-left: 525px;
+            font-family: "SFProRegular", Arial, sans-serif;
+        }
+         
+    </style>
+  </head>
+  <body>
+    <div class="head-bar"></div>
+    <header>
+        <div class="header-container">
+            <div class="d-flex">
+                <img class="header-logo" src="./images/headerLogo.png" height="50" width="124" />
+                <span class="header-logo-text">Time Keeping</span>
+            </div> 
+            <div class="profile">
+                <div>
+                    <div class="username-container">
+                        <h3 class="username">Keitlin Smith</h3>
+                        <h3 class="user_type">Employee</h3>
+                    </div>
+                    <img src="https://ui-avatars.com/api/?name=Keitlin+Smith&background=ABD780" class="profile-pic" />
+                <div class="dropdown-menu" id="dropdown">
+                    <a href="#logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div>
+            
+        </div>
+    </main>
+    <footer>
+        <div class="footer-container">
+        <p>&copy; Borough of Manhattan Community College. All rights reserved</p>
+    </div>
+    </footer>
+    <script>
+        $(document).ready(function() {
+            $(".profile-pic").click(function() {
+                $("#dropdown").toggle();
+            });
+            $(window).click(function(event) {
+                if (!$(event.target).closest('.profile').length) {
+                    $("#dropdown").hide();
+                }
+            });
+        });
+    </script>
+  </body>
+</html>

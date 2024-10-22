@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <title>Holidays n Timeoffs</title>
+	<link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="./css/holidaysAndTimeoff.css">
+    </head>
+    <body>
+        <div class="head-bar"></div>
+        <header>
+            <div class="header-container">
+                <div class="d-flex">
+                    <img class="header-logo" src="./images/headerLogo.png" height="50" width="124" />
+                    <span class="header-logo-text">Time Keeping</span>
+                </div>                 <div class="profile">
+                    <div class="username-container">
+                        <h3 class="username">Keitlin Smith</h3>
+                        <h3 class="user_type">Employee</h3>
+                    </div>
+                    <img src="https://ui-avatars.com/api/?name=Keitlin+Smith&background=ABD780" class="profile-pic" />
+                    <div class="dropdown-menu" id="dropdown">
+                        <a href="./index.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="main-container">
+                <div class="head-section heading-section">
+                    <a href="./landingPage.html" class="top-back-link">
+                        <i class="fa-solid fa-arrow-left" style="margin-right: 6px;"></i>Back
+                    </a>
+                    <h1 class="page-title">Holidays & Time-offs</h1>
+                    <p class="page-description">Here is the list of public holidays and employee time-offs.</p>
+                </div>
+                <div class="timesOff-and-leave-section-container">
+                    <div class="timesOff-section">
+                        <p class="timesOff-section-heading">Time-offs</p>
+                        <div class="timesOff-detail-section">
+                            <div style="display: flex">
+                                <div class="timesOff-number">
+                                    <span class="leave-count-text">02</span>
+                                </div>
+                                <div>
+                                    <p class="timesOff-text">Annual Leaves Used</p>
+                                    <p class="timesOff-text"><strong>20</strong> Total Leaves</p>
+                                </div>
+                            </div>
+                            <div style="display: flex">
+                                <div class="timesOff-number">
+                                    <span class="leave-count-text">00</span>
+                                </div>
+                                <div>
+                                    <p class="timesOff-text">Sick Leaves Used</p>
+                                    <p class="timesOff-text"><strong>07</strong> Total Leaves</p>
+                                </div>
+                            </div>
+                            <div style="display: flex">
+                                <div class="timesOff-number">
+                                    <span class="leave-count-text">05</span>
+                                </div>
+                                <div>
+                                    <p class="timesOff-text">Personal Time-offs Used</p>
+                                    <p class="timesOff-text"><strong>20</strong> Total Leaves</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="leave-section">
+                        <p class="leave-section-heading">Leave Request</p>
+                        <div>
+                            <p class="leave-section-duration-text">Aug 02 - Aug 19</p>
+                            <p style="display: flex; margin-top: 0">
+                                <span class="leave-status-section">
+                                    <span class="status-icon"></span>
+                                    Approved
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="annual-holidays-section-heading">Annual Holidays</h2>
+                <div class="annual-holidays-section-container">
+                        <table>
+                            <tr class="table-heading" >
+                                  <th style="width: 220px;padding-left: 20px;">MONTHS</th>
+                                  <th >DATES</th>
+                                </tr>
+                                <tr class="table-row">
+                                  <td><p class="month-name">January</p></td>
+                                  <td  class="annual-holidays-month-detail">
+                                    <div class="d-flex me-10">
+                                        <div class="flag-image">
+                                            <img src="./images/flag.svg" height="22" width="22.57"/>
+                                        </div>
+                                     <div>
+                                        <p class="date">Mon - Jan 01</p>
+                                        New Year's Day
+                                     </div> 
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr class="table-row">
+                                    <td ><p class="month-name">February</p></td>
+                                    <td  class="annual-holidays-month-detail">
+                                      
+                                          <div class="flag-image">
+                                          </div>
+                                         <div>
+                                          
+                                         </div>
+                                    </td>
+                                  </tr>
+                                  <tr class="table-row">
+                                    <td ><p class="month-name">March</p></td>
+                                    <td  class="annual-holidays-month-detail">
+                                      
+                                          <div class="flag-image">
+                                          </div>
+                                         <div>
+                                          
+                                         </div>
+                                    </td>
+                                  </tr>
+                                  <tr class="table-row">
+                                    <td ><p class="month-name">April</p></td>
+                                    <td  class="annual-holidays-month-detail">
+                                      
+                                          <div class="flag-image">
+                                          </div>
+                                         <div>
+                                          
+                                         </div>
+                                    </td>
+                                  </tr>
+                                  <tr class="table-row">
+                                    <td ><p class="month-name">May</p></td>
+                                    <td  class="annual-holidays-month-detail">
+                                      
+                                          <div class="flag-image">
+                                          </div>
+                                         <div>
+                                          
+                                         </div>
+                                    </td>
+                                  </tr>
+                                  <tr class="table-row">
+                                    <td ><p class="month-name">June</p></td>
+                                    <td  class="annual-holidays-month-detail">
+                                      
+                                          <div class="flag-image">
+                                          </div>
+                                         <div>
+                                          
+                                         </div>
+                                    </td>
+                                  </tr>
+                                  <tr class="table-row">
+                                    <td ><p class="month-name">July</p></td>
+                                    <td  class="annual-holidays-month-detail">
+                                      
+                                          <div class="flag-image">
+                                          </div>
+                                         <div>
+                                          
+                                         </div>
+                                    </td>
+                                  </tr>
+                                  <tr class="table-row">
+                                    <td ><p class="month-name">August</p></td>
+                                    <td  class="annual-holidays-month-detail">
+                                      
+                                          <div class="flag-image">
+                                          </div>
+                                         <div>
+                                          
+                                         </div>
+                                    </td>
+                                  </tr>
+                                  <tr class="table-row">
+                                    <td ><p class="month-name">September</p></td>
+                                    <td  class="annual-holidays-month-detail">
+                                      
+                                          <div class="flag-image">
+                                          </div>
+                                         <div>
+                                          
+                                         </div>
+                                    </td>
+                                  </tr>
+                                  <tr class="table-row">
+                                    <td ><p class="month-name">October</p></td>
+                                    <td  class="annual-holidays-month-detail">
+                                      
+                                          <div class="flag-image">
+                                          </div>
+                                         <div>
+                                          
+                                         </div>
+                                    </td>
+                                  </tr>
+                                  <tr class="table-row">
+                                    <td ><p class="month-name">November</p></td>
+                                    <td  class="annual-holidays-month-detail">
+                                      
+                                          <div class="flag-image">
+                                          </div>
+                                         <div>
+                                          
+                                         </div>
+                                    </td>
+                                  </tr>
+                                  <tr class="table-row" style="height: 170px;">
+                                    <td ><p class="month-name">December</p></td>
+                                    <td  class="annual-holidays-month-detail">    
+                                        <div class="flag-image">
+                                            <img src="./images/christmas-tree.png" height="22" width="22.57"/>
+                                        </div>
+                                     <div>
+                                        <p class="date">Mon - Dec 25 to Sat - Dec 31</p>
+                                        Christmas Holidays
+                                     </div> 
+                                    </td>
+                                  </tr>
+                        </table>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer-container">
+                <p> &copy; Borough of Manhattan Community College. All rights reserved </p>
+            </div>
+        </footer>
+        <script>
+            $(document).ready(function () {
+                $(".profile-pic").click(function () {
+                    $("#dropdown").toggle();
+                });
+                $(window).click(function (event) {
+                    if (!$(event.target).closest(".profile").length) {
+                        $("#dropdown").hide();
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

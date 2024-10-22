@@ -1,0 +1,340 @@
+@font-face {
+    font-family: "OutfitRegular";
+    src: url("../fonts/Outfit-Regular.ttf") format("opentype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "OutfitSemiBold";
+    src: url("../fonts/Outfit-SemiBold.ttf") format("opentype");
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+	font-family: "OutfitMedium";
+	src: url("../fonts/Outfit-Medium.ttf") format("opentype");
+	font-weight: normal;
+	font-style: italic;
+}
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: auto;
+}
+.head-bar {
+    height: 12px;
+    background: linear-gradient(90deg, #2b5098 0%, #a3bef1 100%);
+    min-width: 1440px;
+}
+header {
+    min-width: 1440px;
+    height: 78px;
+    background-color: #232F64;
+}
+header .header-logo {
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+header .header-logo-text{
+    color: white;
+    font-size: 25px;
+    font-family: "OutfitMedium", Arial, sans-serif;
+    margin-left: 20px;
+    margin-top: 36px;
+height:32px
+}
+header .header-container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+main {
+    flex: 1;
+    min-width: 1440px;
+    background: linear-gradient(to bottom, #F2F0EB, #EFE9E1);
+
+}
+
+footer{
+    min-width: 1440px;
+    background-color: #EFE9E1;
+}
+footer .footer-container
+{
+    width: 1200px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 18px;
+}
+footer p {
+    margin: 0;
+    margin-bottom: 0px;
+    color: #232f64;
+    line-height: 16px;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+}
+
+main .main-container{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+main .main-container .heading-section{
+    margin-top: 36px;
+    font-family: "OutfitRegular", Arial, sans-serif;
+}
+.top-back-link
+{
+    color: #333333;
+    font-family: "OutfitSemiBold", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+}
+main .main-container table{
+    width: 1200px;
+    margin-top: 35px;
+}
+
+main .main-container .toggle-icon{
+    cursor: pointer;
+  }
+
+main .main-container table .table-heading{
+    height: 50px;
+    border: none;
+    background-color: #E0E0E0;
+    text-align: left;
+    border-radius: 12px 12px 0px 0px;
+}
+
+main .main-container table .table-row-background-color {
+    background-color: #FFFCF2;
+}
+
+main .main-container table .table-row-border {
+    border-bottom: 1px solid #979797;
+}
+
+
+main .main-container table .table-heading th {
+    /* border: 1px solid #E0E0E0; */
+    font-size: 16px;
+    font-weight: 600;
+    color: #333333;
+    text-transform: uppercase;        
+    font-family: "OutfitRegular", Arial, sans-serif;
+}
+
+main .main-container table, th, td {
+    border-collapse: collapse;
+    padding: 0;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    vertical-align: middle;
+}
+main .main-container table, td
+{
+    color: #1d1d1f;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+.bg-lightSky{
+    background-color: #f7f9ff;
+}
+.bg-white{
+    background-color: white;
+}
+
+main .main-container table, tr {
+    /* background-color: white; */
+}
+
+/* main .main-container table,
+tr:nth-child(even) {
+    background-color: transparent;
+} */
+
+main .main-container table .table-heading th:first-child {
+    border-top-left-radius: 12px; 
+    border: transparent;
+}
+  
+main .main-container table  .table-heading th:last-child {
+    border-top-right-radius: 12px;
+    border: none;
+
+}
+
+main .main-container table .table-footer td:first-child {
+    border-bottom-left-radius: 12px; 
+    border: none;
+}
+  
+main .main-container table  .table-footer td:last-child {
+    border-bottom-right-radius: 12px;
+}
+
+
+main .main-container .checkbox-container .checkbox-text
+{
+    padding-top: 5px;
+}
+main .main-container .btn-cancel {
+    width: 120px;
+    height: 46px;
+    margin-right: 10px;
+    background-color: transparent;
+    border-radius: 8px;
+    border: 2px solid #232f64;
+    font-size: 18px;
+    color: #232f64;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    padding: 0px;
+}
+main .main-container .btn-cancel a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #232f64;
+}
+main .main-container .btn-submit {
+    width: 160px;
+    height: 46px;
+    background-color: #232f64;
+    border: 2px solid #060b25;
+    color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    padding: 0px;
+}
+main .main-container .btn-submit a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+main table .table-row{
+    height: 50px;
+}
+.hidden-row {
+    display: none;
+}
+.toggle-icon {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+main .main-container table .status-image{
+    position: relative;
+    top: 3px;
+    margin-right: 5px;
+}
+
+main .main-container .inner-table-row{
+    height: 50px;
+    border-top:1px dashed #AAA;
+    color: #1d1d1f;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    font-size: 15px;
+}
+
+main table .tw-toggle {
+        /* background: #95A5A6; */
+        display: inline-block;
+        height: 26px;
+        width: 70px;
+        border-radius: 6px;
+        background-color: #d8d8d8;
+        margin-left: 20px;
+        position: relative;
+        border: 1px solid #b6b6b6;
+      }
+
+      main table  .tw-toggle label {
+        text-align: center;
+        font-family: sans-serif;
+        display: inline-block;
+        color: #95a5a6;
+        position: relative;
+        z-index: 2;
+        margin: 0;
+        text-align: center;
+        padding: 2px 3px;
+        font-size: 15px;
+        margin-left: 7px;
+        cursor: pointer;
+      }
+
+      main table  .tw-toggle input {
+        /* display: none; */
+        position: absolute;
+        z-index: 3;
+        opacity: 0;
+        height: 26px;
+        width: 23px;
+        cursor: pointer;
+      }
+
+      main table   .tw-toggle span {
+        height: 26px;
+        width: 35px;
+        /* line-height: 21px; */
+        /* border-radius: 50%; */
+        background: #fff;
+        display: block;
+        position: absolute;
+        left: 22px;
+        top: 2px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      main table  .tw-toggle input[value="false"]:checked ~ span {
+        background: #ff2525;
+        left: 0;
+        height: 25px;
+        top: 0;
+        border-radius: 5px 0px 0px 5px;
+      }
+
+      main table  .tw-toggle input[value="true"]:checked ~ span {
+        background: #3d9973;
+        left: 35px;
+        height: 25px;
+        top: 0;
+        border-radius: 0px 5px 5px 0px;
+      }
+      main table .tw-toggle input[value="-1"]:checked ~ span {
+        background: #95a5a6;
+        left: 23px;
+        height: 18px;
+        width: 18px;
+        border-radius: 50%;
+        border: 1px solid #eeeeee;
+        background-color: white;
+        margin-top: 1px;
+        margin-left: 3px;
+      }
+
+      main table .tw-toggle input[value="false"]:checked + label,
+      main table .tw-toggle input[value="true"]:checked + label {
+        color: #fff;
+      }
+      main table .tw-toggle input[value="-1"]:checked + label {
+        color: #fff;
+      }
+

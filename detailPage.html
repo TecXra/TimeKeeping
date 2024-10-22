@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Approve Timesheet details</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/approveTimesheetDetail.css" />
+  </head>
+  <body>
+    <div class="head-bar"></div>
+    <header>
+      <div class="header-container">
+        <div class="d-flex">
+          <img class="header-logo" src="./images/headerLogo.png" height="50" width="124" />
+          <span class="header-logo-text">Time Keeping</span>
+      </div> 
+        <div class="profile">
+          <div class="username-container">
+            <h3 class="username">Keitlin Smith</h3>
+            <h3 class="user_type">Employee</h3>
+          </div>
+          <img
+            src="https://ui-avatars.com/api/?name=Keitlin+Smith&background=ABD780"
+            class="profile-pic"
+          />
+          <div class="dropdown-menu" id="dropdown">
+            <a href="./index.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="main-container">
+        <div class="head-section heading-section">
+          <a href="./landingPage.html" class="top-back-link">
+            <i class="fa-solid fa-arrow-left" style="margin-right: 6px"></i>Back
+          </a>
+          <h1 class="page-title" id="employee-name">Timesheet</h1>
+          <span class="employee-id">
+            Employee ID: <span id="employee-id"></span>
+          </span>
+          <div class="approve-timesheet-detail-section">
+            <span> <strong>Manager Name:</strong> Albert Fin </span>
+            <span> <strong>Type:</strong><span style="margin-left: 3px" id="type"></span></span>
+            <span
+              ><strong>Timeperiod:</strong
+              ><span style="margin-left: 3px" id="timeperiod">
+                07-08-2023 - 07-08-2023</span
+              ></span
+            >
+            <span> <strong>Submitted Date:</strong> 07-08-2023 </span>
+          </div>
+          <table>
+            <tr class="table-heading">
+              <th style="width: 120px; padding-left: 18px">DAYS</th>
+              <th style="width: 170px">DATE</th>
+              <th style="width: 140px">CLOCK-IN</th>
+              <th style="width: 140px">LUNCH-IN</th>
+              <th style="width: 140px">LUNCH-OUT</th>
+              <th style="width: 160px">CLOCK-OUT</th>
+              <th style="width: 200px">REASON</th>
+              <th style="width: 110px; text-align: center">HOURS</th>
+            </tr>
+            <tr class="table-row-border">
+              <td
+                style="width: 110px; padding-left: 18px; text-align: left"
+                class="table-row-style"
+              >
+                Mon
+              </td>
+              <td class="table-row-style">07-01-2023</td>
+              <td class="table-row-style">09:00 AM</td>
+              <td class="table-row-style">05:00 PM</td>
+              <td class="table-row-style">09:00 AM</td>
+              <td class="table-row-style">05:00 PM</td>
+              <td class="table-row-style"></td>
+              <td class="table-row-style hours-count">08</td>
+            </tr>
+            <tr class="table-row-background-color table-row-border">
+              <td
+                style="width: 110px; padding-left: 18px; text-align: left"
+                class="table-row-style"
+              >
+                Tue
+              </td>
+              <td class="table-row-style">07-02-2023</td>
+              <td class="table-row-style">09:00 AM</td>
+              <td class="table-row-style">05:00 PM</td>
+              <td class="table-row-style">09:00 AM</td>
+              <td class="table-row-style">05:00 PM</td>
+              <td class="table-row-style"></td>
+              <td class="table-row-style hours-count">08</td>
+            </tr>
+            <tr class="table-row-border">
+              <td
+                style="width: 110px; padding-left: 18px; text-align: left"
+                class="table-row-style"
+              >
+                Wed
+              </td>
+              <td class="table-row-style">07-03-2023</td>
+              <td class="table-row-style">09:00 AM</td>
+              <td class="table-row-style">05:00 PM</td>
+              <td class="table-row-style">09:00 AM</td>
+              <td class="table-row-style">05:00 PM</td>
+              <td class="table-row-style"></td>
+              <td class="table-row-style hours-count">08</td>
+            </tr>
+            <tr class="table-row-background-color table-row-border">
+              <td
+                style="width: 110px; padding-left: 18px; text-align: left"
+                class="table-row-style"
+              >
+                Thr
+              </td>
+              <td class="table-row-style">07-04-2023</td>
+              <td class="table-row-style"></td>
+              <td class="table-row-style"></td>
+              <td class="table-row-style"></td>
+              <td class="table-row-style"></td>
+              <td class="table-row-style"></td>
+              <td class="table-row-style hours-count">00</td>
+            </tr>
+            <tr class="table-row-border">
+              <td
+                style="width: 110px; padding-left: 18px; text-align: left"
+                class="table-row-style"
+              >
+                Fri
+              </td>
+              <td class="table-row-style">07-05-2023</td>
+              <td class="table-row-style">09:00 AM</td>
+              <td class="table-row-style">05:00 PM</td>
+              <td class="table-row-style">09:00 AM</td>
+              <td class="table-row-style">05:00 PM</td>
+              <td class="table-row-style"></td>
+              <td class="table-row-style hours-count">08</td>
+            </tr>
+            <tr class="table-row-background-color table-row-border">
+              <td
+                style="width: 110px; padding-left: 18px; text-align: left"
+                class="table-row-style custom-error-class"
+              >
+                Sat
+              </td>
+              <td class="table-row-style">07-06-2023</td>
+              <td class="table-row-style"></td>
+              <td class="table-row-style"></td>
+              <td class="table-row-style"></td>
+              <td class="table-row-style"></td>
+              <td class="table-row-style"></td>
+              <td class="table-row-style hours-count">00</td>
+            </tr>
+            <tr>
+              <td
+                style="width: 110px; padding-left: 18px; text-align: left"
+                class="table-row-style custom-error-class"
+              >
+                Sun
+              </td>
+              <td class="table-row-style">07-07-2023</td>
+              <td class="table-row-style"></td>
+              <td class="table-row-style"></td>
+              <td class="table-row-style"></td>
+              <td class="table-row-style"></td>
+              <td class="table-row-style"></td>
+              <td class="table-row-style hours-count">00</td>
+            </tr>
+            <tr class="table-footer">
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+
+              <td class="total-hours-text">WEEKLY HOURS</td>
+              <td class="table-footer-content"><div>00</div></td>
+            </tr>
+          </table>
+          <div class="d-flex" style="margin-bottom: 41px">
+            <div class="d-flex">
+              <span class="toggle-label"> Decision </span>
+              <div class="tw-toggle">
+                <input type="radio" name="toggle-row-5" value="false" />
+                <label class="toggle toggle-yes"></label>
+                <input checked type="radio" name="toggle-row-5" value="-1" />
+                <label class="toggle toggle-yes"></label>
+                <input type="radio" name="toggle-row-5" value="true" />
+                <label class="toggle toggle-yes"></label>
+                <span></span>
+              </div>
+            </div>
+            <p class="toggle-text">
+              Simply dummy text of the printing and typesetting industry. Lorem
+              Ipsum has been the industry's standard dummy text ever since the
+              1500s, when an
+            </p>
+          </div>
+          <hr
+            class="checkbox-divider"
+            width="1200px"
+            style="margin-top: 22px"
+          />
+          <div class="d-flex justify-content-between">
+            <div></div>
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                margin-bottom: 162px;
+                margin-left: 185px;
+              "
+            >
+              <button type="cancel" class="btn-cancel">
+                <a href="#"> Cancel </a>
+              </button>
+              <button
+                type="submit"
+                class="btn-submit btn-disabled"
+                id="submitBtn"
+                disabled
+              >
+                <a href="#"> Submit </a>
+              </button>
+            </div>
+            <div class="d-flex">
+                <span class="next-and-save-button-text">Submit & Next</span><div id="save-and-next-button" class="next-and-save-button-image"><img src="./images/rightArrowWithBorder.png"  height="46" width="46"/></div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <p>
+          &copy; Borough of Manhattan Community College. All rights reserved
+        </p>
+      </div>
+    </footer>
+    <script>
+      const timesheetHistoryData = [
+        {
+          id:1,
+          name: "John Smith1",
+          employeeId: "1234567890",
+          type: "Weekly",
+          timePeriod: "07-01-2023 - 07-07-2023",
+          weeklyHours: 32,
+          status: "Approved",
+          statusImage: "./images/status-approved.png",
+        },
+        {
+          id:2,
+          name: "John Smith2",
+          employeeId: "1234567890",
+          type: "Weekly",
+          timePeriod: "07-01-2023 - 07-07-2023",
+          weeklyHours: 32,
+          status: "Rejected",
+          statusImage: "./images/status-rejected.png",
+        },
+        {
+          id:3,
+          name: "John Smith3",
+          employeeId: "1234567890",
+          type: "Weekly",
+          timePeriod: "07-01-2023 - 07-07-2023",
+          weeklyHours: 32,
+          status: "Approved",
+          statusImage: "./images/status-approved.png",
+        },
+        {
+          id:4,
+          name: "John Smith4",
+          employeeId: "1234567890",
+          type: "Weekly",
+          timePeriod: "07-01-2023 - 07-07-2023",
+          weeklyHours: 32,
+          status: "Approved",
+          statusImage: "./images/status-approved.png",
+        },
+        {
+          id:5,
+          name: "John Smith5",
+          employeeId: "1234567890",
+          type: "Weekly",
+          timePeriod: "07-01-2023 - 07-07-2023",
+          weeklyHours: 32,
+          status: "Rejected",
+          statusImage: "./images/status-rejected.png",
+        },
+        {
+          id:6,
+          name: "John Smith6",
+          employeeId: "1234567890",
+          type: "Weekly",
+          timePeriod: "07-01-2023 - 07-07-2023",
+          weeklyHours: 32,
+          status: "Approved",
+          statusImage: "./images/status-approved.png",
+        },
+        {
+          id:7,
+          name: "John Smith7",
+          employeeId: "1234567890",
+          type: "Weekly",
+          timePeriod: "07-01-2023 - 07-07-2023",
+          weeklyHours: 32,
+          status: "Approved",
+          statusImage: "./images/status-approved.png",
+        },
+      ];
+
+      const approveLeaveRequestData = [
+      { id:1,name: "John Smith", employeeId: "1234567890", type: "Personal Time-off", timePeriod: "07-01-2023 - 07-07-2023", status: "", statusImage: "",totalDays:"5" },
+      { id:2,name: "Adam Boatner", employeeId: "1234567890", type: "Personal Time-off", timePeriod: "07-01-2023 - 07-07-2023", status: "", statusImage: "",totalDays:"1" },
+      { id:3,name: "John Smith", employeeId: "1234567890", type: "Personal Time-off", timePeriod: "07-01-2023 - 07-07-2023", status: "Approved", statusImage: "./images/status-approved.png",totalDays:"14" },
+      { id:4,name: "Adam Boatner", employeeId: "1234567890", type: "Personal Time-off", timePeriod: "07-01-2023 - 07-07-2023", status: "Rejected", statusImage: "./images/status-rejected.png",totalDays:"1" },
+      { id:5,name: "John Smith", employeeId: "1234567890", type: "Personal Time-off", timePeriod: "07-01-2023 - 07-07-2023", status: "Approved", statusImage: "./images/status-approved.png",totalDays:"15" },
+    ];
+
+    const approveTimesheetData = [
+        {
+          id: 1,
+          name: "John Smith",
+          employeeId: "1234567890",
+          type: "Weekly",
+          timePeriod: "07-01-2023 - 07-07-2023",
+          actionImage:"./images/right-arrow.svg"
+        },
+        {
+          id: 2,
+          name: "John Smith",
+          employeeId: "1234567890",
+          type: "Bi-Weekly",
+          timePeriod: "07-01-2023 - 07-07-2023",
+          actionImage:"./images/right-arrow.svg"
+        },
+        {
+          id: 3,
+          name: "John Smith",
+          employeeId: "1234567890",
+          type: "Weekly",
+          timePeriod: "07-01-2023 - 07-07-2023",
+          actionImage:"./images/right-arrow.svg"
+        },
+        {
+          id: 4,
+          name: "John Smith",
+          employeeId: "1234567890",
+          type: "Weekly",
+          timePeriod: "07-01-2023 - 07-07-2023",
+          actionImage:"./images/right-arrow.svg"
+        },
+        {
+          id: 5,
+          name: "John Smith",
+          employeeId: "1234567890",
+          type: "Weekly",
+          timePeriod: "07-01-2023 - 07-07-2023",
+          actionImage:"./images/right-arrow.svg"
+        },
+        {
+          id: 6,
+          name: "John Smith",
+          employeeId: "1234567890",
+          type: "Monthly",
+          timePeriod: "May 2023",
+          actionImage:"./images/right-arrow.svg"
+        },
+        {
+          id: 7,
+          name: "John Smith",
+          employeeId: "1234567890",
+          type: "Monthly",
+          timePeriod: "May 2023",
+          actionImage:"./images/right-arrow.svg"
+        },
+        {
+          id: 8,
+          name: "John Smith",
+          employeeId: "1234567890",
+          type: "Weekly",
+          timePeriod: "07-01-2023 - 07-07-2023",
+          actionImage:"./images/pending.png",
+          pendingText:"Pending"
+        },
+      ];
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Retrieve the employee details object from localStorage
+        const employeeDetails = JSON.parse(
+          localStorage.getItem("employeeDetails")
+        );
+
+        if (employeeDetails) {
+          document.getElementById(
+            "employee-name"
+          ).textContent = `${employeeDetails.name}'s Timesheet`;
+          document.getElementById(
+            "employee-id"
+          ).textContent = `${employeeDetails.employeeId}`;
+          document.getElementById(
+            "type"
+          ).textContent = `${employeeDetails.type}`;
+          document.getElementById(
+            "timeperiod"
+          ).textContent = `${employeeDetails.timeperiod}`;
+        }
+      });
+
+      window.addEventListener("beforeunload", function () {
+        localStorage.removeItem("employeeDetails");
+      });
+
+
+      document
+  .getElementById("save-and-next-button")
+  .addEventListener("click", function () {
+    // Retrieve the employee details object from localStorage
+    const employeeDetails = JSON.parse(localStorage.getItem("employeeDetails"));
+
+    if (employeeDetails) {
+      // Determine which array to use based on isApproveLeavePage flag
+      let dataArray;
+      console.log(employeeDetails.tableName)
+      if(employeeDetails.tableName === "approveTimesheet"){
+        dataArray = approveTimesheetData
+      }else if(employeeDetails.tableName === "approveLeaveRequest"){
+        dataArray = approveLeaveRequestData
+      }else if(employeeDetails.tableName === "timesheetHistory"){
+        dataArray = timesheetHistoryData
+      }
+
+      const filterData = dataArray.filter(item => item.id === parseInt(employeeDetails.id));
+      if (filterData[0]?.id <= dataArray.length - 1) {
+        // Get the next data item
+        const nextData = dataArray[filterData[0]?.id];
+
+        // Create the new employeeDetails object
+        const newEmployeeDetails = {
+          id: nextData.id,
+          name: nextData.name,
+          employeeId: nextData.employeeId,
+          type: nextData.type,
+          timeperiod: nextData.timePeriod,
+          isApproveLeavePage:employeeDetails.isApproveLeavePage,
+          tableName:employeeDetails.tableName
+        };
+
+        localStorage.setItem("employeeDetails", JSON.stringify(newEmployeeDetails));
+
+        // Update the UI with the new data
+        document.getElementById("employee-name").textContent = `${nextData.name}'s Timesheet`;
+        document.getElementById("employee-id").textContent = `${nextData.employeeId}`;
+        document.getElementById("type").textContent = `${nextData.type}`;
+        document.getElementById("timeperiod").textContent = `${nextData.timePeriod}`;
+
+        // Optionally, update other elements as needed
+      } else {
+        console.log("No next data found or already at the last item");
+      }
+    } else {
+      console.log("No employee details found in localStorage");
+    }
+  });
+    </script>
+  </body>
+</html>

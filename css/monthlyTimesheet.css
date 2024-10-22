@@ -1,0 +1,606 @@
+@font-face {
+  font-family: "OutfitRegular";
+  src: url("../fonts/Outfit-Regular.ttf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "OutfitSemiBold";
+  src: url("../fonts/Outfit-SemiBold.ttf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+	font-family: "OutfitMedium";
+	src: url("../fonts/Outfit-Medium.ttf") format("opentype");
+	font-weight: normal;
+	font-style: italic;
+}
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: auto;
+}
+.head-bar {
+  height: 12px;
+  background: linear-gradient(90deg, #2b5098 0%, #a3bef1 100%);
+  min-width: 1440px;
+}
+header {
+  min-width: 1440px;
+  height: 90px;
+  background-color: #232f64;
+}
+header .header-logo {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+header .header-logo-text{
+  color: white;
+  font-size: 25px;
+  font-family: "OutfitMedium", Arial, sans-serif;
+  margin-left: 20px;
+  margin-top: 36px;
+}
+header .header-container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+main {
+  flex: 1;
+  min-width: 1440px;
+  background: linear-gradient(to bottom, #F2F0EB, #EFE9E1);
+}
+
+footer {
+  min-width: 1440px;
+  background-color: #EFE9E1;
+}
+footer .footer-container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 18px;
+  margin-top: 40px;
+}
+footer p {
+  margin: 0;
+  margin-bottom: 0px;
+  color: #232f64;
+  line-height: 16px;
+  font-family: "OutfitRegular", Arial, sans-serif;
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+}
+main .main-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main .main-container .heading-section {
+  margin-top: 36px;
+}
+
+main .main-container .heading-section .week-label {
+  height: 18px;
+  margin-top: 33px;
+  margin-bottom: 4px;
+  color: #333333;
+  font-family: "OutfitSemiBold", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 19px;
+}
+
+main .main-container .heading-section .custom-select {
+  width: 300px;
+  /* height: 44px; */
+  font-size: 14px;
+  border-radius: 4px;
+  text-align: justify;
+  background-color: #fff;
+  border: 1px solid #cccccc;
+  padding-left: 15px;
+  color: #333;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: "OutfitRegular", Arial, sans-serif;
+}
+
+main .main-container .heading-section .custom-select-popup {
+    width: 200px;
+    height: 40px;
+    font-size: 14px;
+    border-radius: 4px;
+    text-align: justify;
+    background-color: #fff;
+    border: 1px solid #cccccc;
+    padding-left: 15px;
+    color: #333;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-family: "OutfitRegular", Arial, sans-serif;
+  }
+
+  main .main-container .heading-section .custom-select-popup:focus {
+    outline: none;
+  }
+
+
+
+.top-back-link {
+  color: #333333;
+  font-family: "OutfitSemiBold", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+}
+main .main-container .heading-section h1 {
+  font-size: 40px;
+  height: 49px;
+  line-height: 50px;
+  margin-top: 18px;
+  margin-bottom: 4px;
+  /* width: 347px; */
+  font-family: "OutfitSemiBold", Arial, sans-serif;
+  font-weight: 600;
+  color: #1d1d1f;
+}
+
+main .main-container .heading-section p {
+  height: 19px;
+  /* width: 391px; */
+  line-height: 19px;
+  margin: 0;
+  color: #1d1d1f;
+  font-family: "OutfitSemiBold", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+main .main-container select.custom-select {
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(101% - 20px) calc(1em + 2px),
+    calc(101% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0px;
+  background-size: 5px 5px, 5px 5px, 1px 100%;
+  background-repeat: no-repeat;
+}
+
+main .main-container select.custom-select:focus {
+  background-image: linear-gradient(45deg, #cccccc 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, #cccccc 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(101% - 15px) 1em, calc(101% - 20px) 1em,
+    calc(100% - 2.5em) 0px;
+  background-size: 5px 5px, 5px 5px, 1px 100%;
+  background-repeat: no-repeat;
+  border-color: #cccccc;
+  outline: 0;
+}
+
+
+
+.custom-select-popup .select {
+    cursor: pointer;
+    display: block;
+    padding: 14px 0px;
+    height: 44px;
+}
+
+.custom-select-popup .select > i {
+    font-size: 13px;
+    color: #888;
+    cursor: pointer;
+    float: right;
+    line-height: 20px;
+    height: 40px;
+}
+.custom-select-popup:hover {
+    box-shadow: 0 0 4px rgb(204, 204, 204)
+}
+.custom-select-popup:active {
+    background-color: #f8f8f8
+}
+.custom-select-popup.active:hover,
+.custom-select-popup.active {
+    box-shadow: 0 0 4px rgb(204, 204, 204);
+    border-radius: 2px 2px 0 0;
+    background-color: #f8f8f8
+}
+.custom-select-popup.active .select > i {
+    transform: rotate(-90deg)
+}
+.custom-select-popup .dropdown-menu {
+    position: absolute;
+    background-color: #fff;
+    width: 200px;
+    left: 20px;
+    top: 69px;
+    box-shadow: 0 1px 2px rgb(204, 204, 204);
+    border-radius: 0px 0px 4px 4px;
+    overflow: hidden;
+    display: none;
+    overflow-y: auto;
+    z-index: 9;
+    border: 1px solid #cccccc;
+    color: #333;
+}
+.custom-select-popup .dropdown-menu li {
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    padding: 14px 15px;
+    height: 40px;
+    border-top: 0px;
+    border-bottom: 1px solid #cccccc;
+
+} 
+.custom-select-popup .dropdown-menu {
+    padding: 0;
+    list-style: none
+}
+.custom-select-popup .dropdown-menu li:hover {
+    background-color: #f2f2f2
+}
+.custom-select-popup .dropdown-menu li:active {
+    background-color: #e2e2e2
+}
+
+
+main .main-container .custom-select-popup {
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(101% - 20px) calc(1em + 5px),
+    calc(101% - 15px) calc(1em + 5px), calc(100% - 2.5em) 0px;
+  background-size: 5px 5px, 5px 5px, 1px 100%;
+  background-repeat: no-repeat;
+}
+
+main .main-container .custom-select-popup.active:focus {
+  background-image: linear-gradient(45deg, #cccccc 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, #cccccc 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(101% - 15px) 20px, calc(101% - 20px) 20px,
+    calc(100% - 2.5em) 0px;
+  background-size: 5px 5px, 5px 5px, 1px 100%;
+  background-repeat: no-repeat;
+  border-color: #cccccc;
+  outline: 0;
+}
+
+main .main-container .custom-select:focus {
+  outline: 0;
+}
+
+
+
+.main-container .retrieve-timesheet-section .radio-container {
+  display: block;
+  position: relative;
+  padding-left: 34px;
+  margin-bottom: 0px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 26px;
+  color: #333333;
+  font-family: "OutfitRegular", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Hide the browser's default radio button */
+.main-container .retrieve-timesheet-section .radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.main-container .retrieve-timesheet-section .radio-container .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 26px;
+  width: 26px;
+  background-color: #ccc; /* Set the default background color */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+/* On mouse-over, add a grey background color */
+.main-container
+  .retrieve-timesheet-section
+  .radio-container:hover
+  input
+  ~ .checkmark {
+  background-color: #bbb;
+}
+
+/* When the radio button is checked, change the background */
+.main-container
+  .retrieve-timesheet-section
+  .radio-container
+  input:checked
+  ~ .checkmark {
+  background-color: #232f64;
+}
+
+/* Create the indicator (the dot/circle - always visible but changes color when checked) */
+.main-container .retrieve-timesheet-section .radio-container .checkmark:after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white; /* Default dot color */
+}
+
+/* Change the dot color when checked */
+.main-container
+  .retrieve-timesheet-section
+  .radio-container
+  input:checked
+  ~ .checkmark:after {
+  background: white !important; /* Dot color when checked */
+}
+
+main .main-container .calender-table-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main .main-container .table-heading {
+  /* border: 1px solid #e0e0e0; */
+}
+
+main .main-container .btn-cancel{
+    width: 120px;
+    height: 46px;
+    margin-right: 10px;
+    background-color: transparent;
+    border-radius: 8px;
+    border: 2px solid #232F64;
+    font-size: 18px;
+    color: #232F64;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    padding: 0px;
+}
+main .main-container .btn-cancel a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #232f64;
+}
+main .main-container .btn-submit{
+    width: 160px;
+    height: 46px;
+    background-color: #232f64;
+    border: 2px solid #060B25;
+    color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    padding: 0px;
+}
+main .main-container .btn-submit a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+main .main-container .checkbox-container p{
+    color: #1d1d1f;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 1px;
+    margin-bottom: 0px;
+    margin-left: 11px;
+    padding-top: 0px;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    line-height: 19px;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin: 20px auto;
+}
+
+.calendar-header,
+.calendar-body {
+  display: contents;
+}
+  
+
+.calendar-header div {
+  height: 40px;
+  color: #333333;
+  font-family: "OutfitRegular", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #e1dccf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #ccc !important;
+
+}
+
+main .main-container .calendar-body div:hover{
+  background-color: #B3CBF8;
+}
+
+main .main-container .calendar-header div:first-child {
+  border-top-left-radius: 12px;
+  border: none;
+}
+
+main .main-container .calendar-header div:last-child {
+  border-top-right-radius: 12px;
+}
+
+main .main-container .calendar-body div:nth-child(29) {
+  border-bottom-left-radius: 12px;
+  border-left: 1px solid #ccc !important;
+
+}
+
+main .main-container .calendar-body  div:nth-child(1) {
+  border-left: 1px solid #ccc !important;
+}
+
+main .main-container .calendar-body  div:nth-child(8) {
+  border-left: 1px solid #ccc !important;
+}
+
+main .main-container .calendar-body  div:nth-child(15) {
+  border-left: 1px solid #ccc !important;
+}
+
+main .main-container .calendar-body  div:nth-child(22) {
+  border-left: 1px solid #ccc !important;
+}
+
+
+main .main-container .calendar-body  div:nth-child(35) {
+  border-bottom-right-radius: 12px;
+  border-right: 1px solid #ccc !important;
+}
+
+.btn-disabled
+{
+    background-color: transparent !important;
+    border: solid 2px #AAAAAA !important;
+    color: #AAAAAA !important;
+    cursor: default !important;   
+}
+.btn-disabled a
+{
+    color: #AAAAAA !important;
+    pointer-events: none !important;
+    cursor: default !important;
+}
+
+main .main-container  .calendar-body div {
+  background: #fff;
+  padding: 10px;
+  height: 100px;
+  width: 173px;
+  border-right: 1px solid #CCCCCC;
+  border-bottom: 1px solid #CCCCCC;
+  text-align: right;
+  cursor: pointer;
+  position: relative;
+}
+
+main .main-container  .calendar-body .date-span{
+    position: relative;
+    z-index: 2;
+    font-family: "OutfitMedium", Arial, sans-serif;
+
+}
+
+main .main-container  .calendar-body div.disabled {
+  background: #EEEEEE;
+  border-left: none;
+  border-right: none;
+}
+
+main .main-container  .calendar-body div.empty {
+    background: #EEEEEE; /* Blue background for empty dates */
+    cursor: default; /* Disable cursor for empty dates */
+  }
+
+
+  main .main-container  .calendar-body .event {
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    background: #B3CBF8; /* Light blue background */
+    padding: 14px 10px;
+    font-size: 14px;
+    line-height: 18px;
+    color: black;
+    display: flex;
+    align-items: end;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    white-space: nowrap; /* Prevent line break */
+  }
+
+  main .main-container  .popup {
+    display: none;
+    position: absolute;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+  main .main-container  .popup-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: "OutfitRegular", Arial, sans-serif;
+
+  }
+  
+  main .main-container  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  main .main-container .popup-lable{
+    font-family: "OutfitRegular", Arial, sans-serif;
+  }
+
+
+
+  .calender-table-container .calendar {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
+
+  .highlight {
+    background-color: #B3CBF8 !important;
+  }
+
+  .dropdown-menu {
+    display: block; /* Ensure it's visible by default */
+    /* Add any other necessary styles here */
+  }
+  
+  .dropdown-menu.hidden {
+    display: none;
+  }

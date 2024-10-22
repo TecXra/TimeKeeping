@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Monthly Timesheet</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/monthlyTimesheet.css" />
+    <script src="./js/main.js"></script>
+  </head>
+  <body>
+    <div class="head-bar"></div>
+    <header>
+      <div class="header-container">
+        <div class="d-flex">
+          <img
+            class="header-logo"
+            src="./images/headerLogo.png"
+            height="50"
+            width="124"
+          />
+          <span class="header-logo-text">Time Keeping</span>
+        </div>
+        <div class="profile">
+          <div class="username-container">
+            <h3 class="username">Keitlin Smith</h3>
+            <h3 class="user_type">Employee</h3>
+          </div>
+          <img
+            src="https://ui-avatars.com/api/?name=Keitlin+Smith&background=ABD780"
+            class="profile-pic"
+          />
+          <div class="dropdown-menu" id="dropdown">
+            <a href="./index.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="main-container">
+        <div class="head-section heading-section">
+          <a href="./landingPage.html" class="top-back-link">
+            <i class="fa-solid fa-arrow-left" style="margin-right: 6px"></i>Back
+          </a>
+          <h1 class="page-title">Monthly Timesheet</h1>
+          <p class="page-description">
+            Please select the week to view timesheet.
+          </p>
+
+          <div class="week-label">Timeperiod</div>
+          <div class="form-select">
+            <div class="custom-select" id="custom-week-list">
+              <div class="select">
+                <span id="selected-value">Select</span>
+              </div>
+              <input type="hidden" name="selectedValue" id="hidden-input" />
+              <ul class="dropdown-menu" id="dropdown-menu"></ul>
+            </div>
+          </div>
+
+          <div id="calender-table" class="d-none">
+            <div class="calender-table-container">
+              <div class="calendar">
+                <!-- Calendar Header -->
+                <div class="calendar-header">
+                  <div style="color: #ff3232">Sun</div>
+                  <div>Mon</div>
+                  <div>Tue</div>
+                  <div>Wed</div>
+                  <div>Thu</div>
+                  <div>Fri</div>
+                  <div style="color: #ff3232">Sat</div>
+                </div>
+                <div class="calendar-body"></div>
+              </div>
+
+              <!-- Popup -->
+              <div id="popup" class="popup">
+                <div class="popup-content">
+                  <span class="close">&times;</span>
+                  <label for="event" class="popup-label"></label>
+                  <div class="custom-select-popup" id="custom-week-list">
+                    <div class="select">
+                      <span id="selected-value-popup">Select</span>
+                    </div>
+                    <input
+                      type="hidden"
+                      name="selectedValue"
+                      id="hidden-input"
+                    />
+                    <ul class="dropdown-menu" id="dropdown-menu-popup">
+                      <li value="Personal Timeoff">Personal Timeoff</li>
+                      <li value="Meeting">Meeting</li>
+                      <li value="Appointment">Appointment</li>
+                    </ul>
+                  </div>
+                  <div class="text-center d-none" id="remove-button">
+                    <a id="remove" style="cursor: pointer">Remove</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="checkbox-container">
+              <label class="checkbox-inner-container">
+                <input
+                  type="checkbox"
+                  onchange="changeSubmitButtonState(this)"
+                />
+                <span class="checkmark"></span>
+              </label>
+              <p>I accept that all information entered is correct.</p>
+            </div>
+            <hr width="1200px" class="checkbox-divider" />
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                margin-bottom: 50px;
+              "
+            >
+              <button type="cancel" class="btn-cancel">
+                <a href="#">Cancel</a>
+              </button>
+              <button
+                type="submit"
+                class="btn-submit btn-disabled"
+                id="submit-btn"
+                disabled="true"
+              >
+                <a href="#">Submit</a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-container" style="margin-top: 60px">
+        <p>
+          &copy; Borough of Manhattan Community College. All rights reserved
+        </p>
+      </div>
+    </footer>
+    <script>
+      $(document).ready(function () {
+        $(".profile-pic").click(function () {
+          $("#dropdown").toggle();
+        });
+        $(window).click(function (event) {
+          if (!$(event.target).closest(".profile").length) {
+            $("#dropdown").hide();
+          }
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const selectElement = document.getElementById("custom-week-list");
+        const dropdownMenu = document.getElementById("dropdown-menu");
+        const selectedValueElement = document.getElementById("selected-value");
+        const hiddenInputElement = document.getElementById("hidden-input");
+
+        function formatMonth(date) {
+          const months = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+          ];
+          return months[date.getMonth()];
+        }
+
+        // Generate month options for the current month and the next two months
+        const today = new Date();
+        for (let i = 0; i < 3; i++) {
+          const currentMonth = new Date(today);
+          currentMonth.setMonth(currentMonth.getMonth() + i);
+
+          const monthName = formatMonth(currentMonth);
+
+          const li = document.createElement("li");
+          li.setAttribute("value", i + 1);
+          li.textContent = monthName;
+          li.addEventListener("click", function () {
+            selectedValueElement.textContent = monthName;
+            // Call your function with the selected month here if needed
+            showMonthlyTimesheetTableData(monthName);
+          });
+
+          dropdownMenu.appendChild(li);
+        }
+      });
+
+      /*Dropdown Menu*/
+      $(".custom-select").click(function () {
+        $(this).attr("tabindex", 1).focus();
+        $(this).toggleClass("active");
+        $(this).find(".dropdown-menu").slideToggle(300);
+      });
+      $(".custom-select").focusout(function () {
+        $(this).removeClass("active");
+        $(this).find(".dropdown-menu").slideUp(300);
+      });
+      $(".custom-select .dropdown-menu li").click(function () {
+        $(this).parents(".custom-select").find("span").text($(this).text());
+        $(this)
+          .parents(".custom-select")
+          .find("input")
+          .attr("value", $(this).attr("id"));
+      });
+      /*End Dropdown Menu*/
+
+      $(".dropdown-menu li").click(function () {
+        var input =
+            "<strong>" +
+            $(this).parents(".custom-select").find("input").val() +
+            "</strong>",
+          msg = '<span class="msg">Hidden input value: ';
+        $(".msg").html(msg + input + "</span>");
+      });
+
+      function changeSubmitButtonState(value) {
+        if (value.checked) {
+          document.getElementById("submit-btn").disabled = false;
+          document
+            .getElementById("submit-btn")
+            .classList.remove("btn-disabled");
+        } else {
+          document.getElementById("submit-btn").disabled = true;
+          document.getElementById("submit-btn").classList.add("btn-disabled");
+        }
+      }
+
+      function showMonthlyTimesheetTableData(value) {
+        if (value != "null" && value != null) {
+          document.getElementById("calender-table").classList.add("d-block");
+          document.getElementById("calender-table").classList.remove("d-none");
+        }
+        if (value == null || value == "null") {
+          document.getElementById("calender-table").classList.remove("d-block");
+          document.getElementById("calender-table").classList.add("d-none");
+        }
+      }
+
+      /*Dropdown Menu*/
+      $(".custom-select-popup").click(function () {
+        $(this).attr("tabindex", 1).focus();
+        $(this).toggleClass("active");
+        $(this).find(".dropdown-menu").slideToggle(300);
+      });
+      $(".custom-select-popup").focusout(function () {
+        $(this).removeClass("active");
+        $(this).find(".dropdown-menu").slideUp(300);
+      });
+      $(".custom-select-popup .dropdown-menu li").click(function () {
+        $(this)
+          .parents(".custom-select-popup")
+          .find("span")
+          .text($(this).text());
+        $(this)
+          .parents(".custom-select-popup")
+          .find("input")
+          .attr("value", $(this).attr("id"));
+      });
+      /*End Dropdown Menu*/
+
+      $(".dropdown-menu li").click(function () {
+        var input =
+            "<strong>" +
+            $(this).parents(".custom-select-popup").find("input").val() +
+            "</strong>",
+          msg = '<span class="msg">Hidden input value: ';
+        $(".msg").html(msg + input + "</span>");
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const calendarBody = document.querySelector(".calendar-body");
+        const popup = document.getElementById("popup");
+        const closeBtn = document.querySelector(".close");
+        const dropdownMenu = document.querySelectorAll("ul .dropdown-menu");
+        const selectedValueElement = document.getElementById("selected-value");
+        const dropdownMenuItems = document.querySelectorAll(
+          "#dropdown-menu-popup li"
+        );
+        const eventSelect = document.getElementById("selected-value-popup");
+        const removeBtn = document.getElementById("remove");
+        let isDragging = false;
+        let startIndex = null;
+        let endIndex = null;
+        let dateRange = [];
+        let selectedMonth = new Date().getMonth(); // Default to current month
+
+        // Render the calendar for the selected month and year
+        function renderCalendar(month, year) {
+          calendarBody.innerHTML = ""; // Clear the existing calendar
+
+          const firstDay = new Date(year, month, 1).getDay();
+          const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+          for (let i = 0; i < 35; i++) {
+            const day = document.createElement("div");
+            const dateDiv = document.createElement("span");
+            dateDiv.classList.add("date-span");
+
+            if (i >= firstDay && i < firstDay + daysInMonth) {
+              const dateNumber = (i - firstDay + 1).toString().padStart(2, "0");
+              dateDiv.innerText = dateNumber;
+              day.appendChild(dateDiv);
+
+              day.addEventListener("mousedown", (e) => {
+                isDragging = true;
+                startIndex = i;
+                clearHighlights();
+                highlightRange(startIndex, startIndex);
+              });
+
+              day.addEventListener("mouseover", () => {
+                if (isDragging) {
+                  endIndex = i;
+                  highlightRange(startIndex, endIndex);
+                }
+              });
+
+              day.addEventListener("mouseup", () => {
+                if (isDragging) {
+                  isDragging = false;
+                  endIndex = i;
+                  showPopup();
+                }
+              });
+            } else {
+              day.classList.add("disabled");
+            }
+            calendarBody.appendChild(day);
+          }
+        }
+
+        const monthItems = document.querySelectorAll("#dropdown-menu li");
+        monthItems.forEach((item) => {
+          item.addEventListener("click", () => {
+            selectedMonth = new Date(`${item.innerText} 1, 2021`).getMonth();
+            selectedValueElement.innerText = item.innerText;
+            renderCalendar(selectedMonth, new Date().getFullYear());
+          });
+        });
+
+        function highlightRange(start, end) {
+          clearHighlights();
+          const minIndex = Math.min(start, end);
+          const maxIndex = Math.max(start, end);
+          for (let i = minIndex; i <= maxIndex; i++) {
+            calendarBody.children[i].classList.add("highlight");
+          }
+        }
+
+        function clearHighlights() {
+          Array.from(calendarBody.children).forEach((child) => {
+            child.classList.remove("highlight");
+          });
+        }
+
+        function clearSelection() {
+          clearHighlights();
+          startIndex = null;
+          endIndex = null;
+          setTimeout(() => {
+            popup.style.display = "none";
+          }, 300);
+        }
+
+        function showPopup() {
+          const rect = calendarBody.children[endIndex].getBoundingClientRect();
+          const popupTop = rect.bottom + window.scrollY;
+          const popupLeft = rect.left + window.scrollX;
+          popup.style.top = `${popupTop}px`;
+          popup.style.left = `${popupLeft}px`;
+          popup.style.display = "block";
+          const day = calendarBody.children[endIndex];
+          const eventDiv = day.querySelector(".event");
+          if (eventDiv) {
+            // Set the dropdown value to the event text
+            eventSelect.innerText = eventDiv.innerText;
+            document.getElementById("remove-button").style.display = "block";
+          } else {
+            // Reset the dropdown value if there's no event
+            eventSelect.innerText = "Select";
+            document.getElementById("remove-button").style.display = "none";
+          }
+        }
+
+        function addEventToRange(eventText) {
+          const removeBtn = document.getElementById("remove-button");
+          const minIndex = Math.min(startIndex, endIndex);
+          const maxIndex = Math.max(startIndex, endIndex);
+
+          // Find if the new range overlaps or merges with existing ranges
+          let mergedRange = { minIndex, maxIndex };
+          let isMerged = false;
+
+          for (const range of dateRange) {
+            // Check if ranges overlap
+            if (minIndex <= range.maxIndex && maxIndex >= range.minIndex) {
+              mergedRange.minIndex = Math.min(
+                mergedRange.minIndex,
+                range.minIndex
+              );
+              mergedRange.maxIndex = Math.max(
+                mergedRange.maxIndex,
+                range.maxIndex
+              );
+
+              // Mark this range for removal
+              rangeToRemove = range;
+              isMerged = true;
+            }
+          }
+
+          if (isMerged) {
+            // Remove the old ranges that have been merged
+            const indexToRemove = dateRange.indexOf(rangeToRemove);
+            if (indexToRemove > -1) {
+              dateRange.splice(indexToRemove, 1);
+            }
+
+            dateRange.push(mergedRange);
+          } else {
+            dateRange.push(mergedRange);
+          }
+
+          for (let i = mergedRange.minIndex; i <= mergedRange.maxIndex; i++) {
+            let day = calendarBody.children[i];
+            if (day) {
+              let eventDiv = day.querySelector(".event");
+
+              if (!eventDiv) {
+                eventDiv = document.createElement("div");
+                eventDiv.classList.add("event");
+                day.appendChild(eventDiv);
+              }
+              eventDiv.innerText = eventText;
+            }
+          }
+
+          clearSelection();
+          if (eventSelect) {
+            eventSelect.innerText = "Select";
+          }
+        }
+
+        function removeEventFromRange() {
+          let minIndex = Math.min(startIndex, endIndex);
+          let maxIndex = Math.max(startIndex, endIndex);
+          let rangeToRemove = null;
+          // let tempMin = minIndex;
+          // Find if minIndex falls within any of the defined ranges
+          for (const range of dateRange) {
+            if (minIndex >= range.minIndex && minIndex <= range.maxIndex) {
+              minIndex = range.minIndex;
+              maxIndex = range.maxIndex;
+              rangeToRemove = range;
+              break; // Exit loop as we found the matching range
+            }
+          }
+
+          if (rangeToRemove) {
+            // Remove the range from the array
+            const indexToRemove = dateRange.indexOf(rangeToRemove);
+            if (indexToRemove > -1) {
+              dateRange.splice(indexToRemove, 1);
+            }
+          }
+
+          for (let i = minIndex; i <= maxIndex; i++) {
+            let day = calendarBody.children[i]; // Accessing child by index
+            if (day) {
+              let eventDiv = day.querySelector(".event");
+              if (eventDiv) {
+                day.removeChild(eventDiv);
+              }
+            }
+          }
+
+          // Ensure the popup is hidden and the selection is cleared
+          const popup = document.getElementById("popup"); // Assuming popup is defined somewhere
+          if (popup) {
+            popup.style.display = "none";
+          }
+          clearSelection(); // Assuming clearSelection is a function defined elsewhere
+        }
+
+        closeBtn.addEventListener("click", () => {
+          popup.style.display = "none";
+          clearSelection();
+        });
+
+        dropdownMenuItems.forEach((item) => {
+          item.addEventListener("click", () => {
+            const selectedEvent = item.getAttribute("value");
+            eventSelect.innerText = selectedEvent;
+            addEventToRange(selectedEvent);
+          });
+        });
+
+        removeBtn.addEventListener("click", () => {
+          removeEventFromRange();
+        });
+
+        window.addEventListener("click", (e) => {
+          if (e.target == popup) {
+            popup.style.display = "none";
+          }
+        });
+
+        document.addEventListener("mouseup", () => {
+          if (isDragging) {
+            isDragging = false;
+          }
+        });
+
+        // Initial render of the calendar for the current month and year
+        renderCalendar(selectedMonth, new Date().getFullYear());
+      });
+    </script>
+  </body>
+</html>

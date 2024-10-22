@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <title>landing Page</title>
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="./css/landingpage.css">
+    </head>
+    <body>
+        <div class="head-bar"></div>
+        <header>
+            <div class="header-container">
+                <div class="d-flex">
+                    <img class="header-logo" src="./images/headerLogo.png" height="50" width="124" />
+                    <span class="header-logo-text">Time Keeping</span>
+                </div>                
+                <div class="profile">
+                    <div class="username-container">
+                        <h3 class="username">Keitlin Smith</h3>
+                        <h3 class="user_type">Employee</h3>
+                    </div>
+                    <img src="https://ui-avatars.com/api/?name=Keitlin+Smith&background=ABD780" class="profile-pic" />
+                    <div class="dropdown-menu" id="dropdown">
+                        <a href="./index.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="main-container">
+                <div class="main-header">
+                    <div class="main-heading">
+                        <h2 class="heading-1">Good Morning,</h2>
+                        <h3 class="heading-2">
+                            its <div style="line-height: 50px;">
+                                    <p class="clock" id="hours">00</p><p>:</p><p class="clock" id="minutes">00</p><p>:</p><p class="clock" id="seconds">00</p> <p class="clock" id="session">AM</p>    
+                            </div> in New York on <span id="formatted_date"></span>.
+                        </h3>
+                    </div>
+                    <div class="landingPage-image"></div>
+                </div>
+                <div class="main-cards-container">
+                    <div class="main-card">
+                        <div class="card-icon">
+                            <img src="./images/calendar-icon.png" height="40" width="36" />
+                        </div>
+                        <h3 class="card-text">Submit</h3>
+                        <h3 class="card-text">Timesheet</h3>
+                        <div class="card-bottom-arrow-container">
+                            <a href="./weeklyTimesheet.html">
+                                <img class="card-bottom-arrow" src="./images/arrow.svg" height="20px" width="28px"/>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="main-card">
+                        <div class="card-icon">
+                            <img src="./images/note-icon.png" height="40" width="48"/>
+                        </div>
+                        <h3 class="card-text">Submit</h3>
+                        <h3 class="card-text">Leave Request</h3>
+                        <div class="card-bottom-arrow-container">
+                            <a href="./leaveRequest.html">
+                                <img class="card-bottom-arrow" src="./images/arrow.svg" height="20px" width="28px"/>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="main-card">
+                        <div class="card-icon">
+                            <img src="./images/case-icon.png" height="40" width="48"/>
+                        </div>
+                        <h3 class="card-text">View Holidays</h3>
+                        <h3 class="card-text">& Time-offs</h3>
+                        <div class="card-bottom-arrow-container">
+                            <a href="./holidaysAndTimeoff.html">
+                                <img class="card-bottom-arrow" src="./images/arrow.svg" height="20px" width="28px"/>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="main-card">
+                        <div class="card-icon">
+                            <img src="./images/clock-icon.png" height="36" width="40" />
+                        </div>
+                        <h3 class="card-text">View</h3>
+                        <h3 class="card-text">Timesheet History</h3>
+                        <div class="card-bottom-arrow-container">
+                            <a href="./timesheetHistory.html">
+                                <img class="card-bottom-arrow" src="./images/arrow.svg" height="20px" width="28px"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-cards-container-2">
+                    <div class="main-card-2">
+                        <h3 class="card-text">Approve Timesheets</h3>
+                        <div class="card-bottom-arrow-container-2">
+                            <a href="./approveTimesheet.html">
+                                <img class="card-bottom-arrow" src="./images/arrow.svg" height="20px" width="28px"/>
+                            </a>
+                        </div>
+                        <img class="card-bottom-setting" src="./images/star-tick-icon.png" height="85" width="85"/>
+                    </div>
+                    <div class="main-card-2">
+                        <h3 class="card-text">Approve Leaves</h3>
+                        <div class="card-bottom-arrow-container-2">
+                            <a href="./approveLeaveRequests.html">
+                                <img class="card-bottom-arrow" src="./images/arrow.svg" height="20px" width="28px"/>
+                            </a>
+                        </div>
+                        <img class="card-bottom-setting" src="./images/case-clock-icon.png" height="85" width="85"/>
+                    </div>
+                    <div class="main-card-2">
+                        <h3 class="card-text">User Accounts</h3>
+                        <div class="card-bottom-arrow-container-2">
+                            <a href="">
+                                <img class="card-bottom-arrow" src="./images/arrow.svg" height="20px" width="28px"/>
+                            </a>
+                        </div>
+                        <img class="card-bottom-setting" src="./images/user-accounts.png" height="85" width="85"/>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="landing-page-footer">
+            <div class="footer-container">
+                <p>
+                    &copy; Borough of Manhattan Community College. All rights reserved
+                </p>
+            </div>
+        </footer>
+
+        <script src="./js/main.js"></script>
+        <script src="./js/clock.js"></script>
+    </body>
+</html>

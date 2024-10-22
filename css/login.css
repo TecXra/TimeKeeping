@@ -1,0 +1,204 @@
+@font-face {
+	font-family: "OutfitMedium";
+	src: url("../fonts/Outfit-Medium.ttf") format("opentype");
+}
+@font-face {
+	font-family: "OutfitSemiBold";
+	src: url("../fonts/Outfit-SemiBold.ttf") format("opentype");
+}
+@font-face {
+	font-family: "OutfitRegular";
+	src: url("../fonts/Outfit-Regular.ttf") format("opentype");
+}
+body {
+	/* font-family: Arial, sans-serif; */
+	/* border-top: solid 15px #4489d1; */
+	background-color: #232f64;
+	color: #fff;
+	margin: 0;
+
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: auto;
+
+}
+main
+{
+	display: flex;
+    justify-content: center;
+	flex: 1;
+	min-width: 1440px;	
+}
+main .main-container{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.head-bar {
+    height: 12px;
+    background: linear-gradient(90deg, #2b5098 0%, #a3bef1 100%);
+    min-width: 1440px;
+}
+
+header {
+    min-width: 1440px;
+	height: 78px;
+    background-color: #232f64;
+}
+header .header-logo {
+	margin-top: 14px;
+	margin-bottom: 14px;
+}
+header .header-container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-page {
+	/* width: 1440px; */
+}
+
+.login-page .login-page-container{
+	/* padding: 0px 120px; */
+}
+
+.header-container .logo {
+	margin-top: 40px;
+	/* margin-top: 37px; */
+}
+
+.login-page .login-form {
+	margin-top: 60px;
+	min-width: 1200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.login-page .form {
+	/* height: 381px; */
+	width: 340px;
+	border-radius: 4px;
+	background-color: #f2ede6;
+	margin-top: 29px;
+	padding: 42px 20px 24px 20px;
+	display: flex;
+	flex-direction: column;
+	/* align-items: center; */
+}
+
+.login-form .form .userName {
+	/* padding-top: 42px; */
+	/* padding-left: 20px; */
+}
+
+.login-form .form .label {
+	font-size: 15px;
+	/* margin-bottom: 6px; */
+	font-family: "OutfitMedium", Arial, sans-serif;
+	color: #333333;
+	line-height: 18px;
+}
+
+.login-page .form .form-input {
+	height: 44px;
+	width: 300px;
+	padding-left: 16px;
+	margin-top: 5px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+    box-sizing: border-box;
+	color: #333;
+	font-family: "OutfitRegular", Arial, sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.login-page .form .form-input::placeholder {
+	color: #ccc;
+	opacity: 1; 
+	font-size: 14px;
+	font-family: "OutfitRegular", Arial, sans-serif;
+  }
+  
+  .login-page .form .form-input::-ms-input-placeholder { 
+	color: #ccc;
+	font-size: 14px;
+	font-family: "OutfitRegular", Arial, sans-serif;
+
+  }
+
+
+.login-page .form .form-input:focus-visible {
+	outline: none;
+}
+.login-form .form .password {
+	margin-top: 22px;
+	/* padding-top: 16px; */
+	/* padding-left: 20px; */
+}
+
+.login-form .form .login-button {
+	margin-top: 35px;
+	margin-left: auto;
+	margin-right: auto;
+	/* margin-left: 75px; */
+	height: 44px;
+	width: 200px;
+	background-color: #27407E;
+	border: 2px solid #060b25;
+	border-radius: 8px;
+	cursor: pointer;
+	padding: 0px;
+}
+  
+.login-form .form .login-button a
+{
+	font-family: "OutfitSemiBold", Arial, sans-serif;
+	font-size: 18px;
+	color: white;
+	text-decoration: none;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.login-form .form .forgot-password-text {
+	margin-top: 62px;
+	margin-left: auto;
+	margin-right: auto;
+	/* margin-left: 110px; */
+}
+
+.login-form .form .forgot-password-text a {
+	/* text-decoration: none; */
+	/* border-bottom: 1px solid #4489d1; */
+	color: #4489d1;
+	font-family: "OutfitRegular", Arial, sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 18px;
+	/* text-decoration: underline; */
+}
+
+.login-form .right-reserved-text {
+	margin-top: 30px;
+	margin-bottom: 15px;
+	display: flex;
+	justify-content: center;
+	/* height: 15px; */
+	/* width: 422px; */
+	font-weight: 400;
+	font-size: 13px;
+	color: #ffffff;
+	font-family: "OutfitRegular", Arial, sans-serif;
+	line-height: 16px;
+}

@@ -1,0 +1,457 @@
+@font-face {
+    font-family: "OutfitRegular";
+    src: url("../fonts/Outfit-Regular.ttf") format("opentype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "OutfitSemiBold";
+    src: url("../fonts/Outfit-SemiBold.ttf") format("opentype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: auto;
+}
+.head-bar {
+    height: 12px;
+    background: linear-gradient(90deg, #2b5098 0%, #a3bef1 100%);
+    min-width: 1440px;
+}
+header {
+    min-width: 1440px;
+    height: 78px;
+    background-color: #232F64;
+}
+header .header-logo {
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+header .header-logo-text{
+    color: white;
+    font-size: 25px;
+    font-family: "OutfitMedium", Arial, sans-serif;
+    margin-left: 20px;
+    margin-top: 36px;
+height:32px
+}
+header .header-container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+main {
+    flex: 1;
+    min-width: 1440px;
+    background: linear-gradient(to bottom, #F2F0EB, #EFE9E1);
+}
+
+footer{
+    min-width: 1440px;
+    background-color: #EFE9E1;
+}
+footer .footer-container
+{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 18px;
+    margin-top: 40px;
+}
+footer p {
+    margin: 0;
+    margin-bottom: 0px;
+    color: #232f64;
+    line-height: 16px;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+}
+main .main-container{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+main .main-container .heading-section{
+    margin-top: 36px;
+}
+
+main .main-container .employee-id{
+    font-size: 15px;
+    line-height: 19px;
+    color: #1D1D1F;
+     font-weight: 400; 
+     font-family: "OutfitRegular", Arial, sans-serif;
+}
+
+.top-back-link
+{
+    color: #333333;
+    font-family: "OutfitSemiBold", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+}
+main .main-container .heading-section h1{ 
+    font-size: 40px;
+    height: 49px;
+    line-height: 50px;
+    margin-top: 18px;
+    margin-bottom: 4px;
+    /* width: 347px; */
+    font-family: "OutfitSemiBold", Arial, sans-serif;
+    font-weight: 600;
+    color: #1d1d1f;
+}
+
+main .main-container .heading-section p{
+    height: 19px;
+    /* width: 391px; */
+    line-height: 19px;
+    margin: 0;
+    color: #1d1d1f;
+    font-family: "OutfitSemiBold", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+
+main .main-container .heading-section  strong{
+    color: #1d1d1f;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+main .main-container .heading-section .approve-timesheet-detail-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 950px;
+    margin-top: 23px;
+    margin-bottom: 30px;
+    color: #1d1d1f;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    padding-right: 17px;
+}
+
+
+
+main .main-container table {
+    width: 1200px;
+    margin-bottom: 30px;
+}
+main .main-container table .table-heading {
+    height: 50px;
+    border: none;
+    background-color: #e0e0e0;
+    text-align: left;
+    font-family: "OutfitRegular", Arial, sans-serif;
+}
+
+main .main-container table .table-heading th:first-child {
+    border-top-left-radius: 12px; 
+    border: none;
+}
+  
+main .main-container table  .table-heading th:last-child {
+    border-top-right-radius: 12px;
+}
+
+main .main-container table .table-footer td:first-child {
+    border-bottom-left-radius: 12px; 
+    border: none;
+}
+  
+main .main-container table  .table-footer td:last-child {
+    border-bottom-right-radius: 12px;
+}
+
+main .main-container table .table-footer-department td:first-child {
+    border-bottom-left-radius: 12px; 
+    border: none;
+}
+  
+main .main-container table  .table-footer-department td:last-child {
+    border-bottom-right-radius: 12px;
+}
+
+  main .main-container table tr {
+    background-color: white;
+}
+
+main .main-container table .table-heading th {
+    /* border: 1px solid #e0e0e0; */
+    height: 20px;
+    color: #333333;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+main .main-container table, th, td {
+    border-collapse: collapse;
+    padding: 0;
+    font-family: "OutfitRegular", Arial, sans-serif;
+}
+
+/* main .main-container table, tr:nth-child(odd){
+    background-color: #F7F9FF;
+} */
+
+main .main-container table .table-row-style {
+    /* border: 1px solid #aaaaaa; */
+    border-right: none;
+    border-left: none;
+    height: 50px;
+    color: #1d1d1f;
+    font-size: 15px;
+    font-weight: 500;
+}
+main .main-container table .table-row-style.hours-count,
+.hours-count
+{
+    text-align: center;
+    font-weight: 600;
+}
+main .main-container table .table-row-style-select {
+    background-color: white;
+    border: 0;
+    height: 60px;
+    text-align: center;
+}
+main .main-container table .table-footer {
+    border-top: 1px solid #aaaaaa;
+    background-color: #e0e0e0;
+    height: 50px;
+}
+main .main-container table .table-footer .table-footer-content {
+    text-align: center;
+    color: #1d1d1f;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23px;
+    background-color: #F0DC00;
+}
+main .main-container table .table-footer .total-hours-text {
+    width: 272px;
+    text-align: end;
+    padding-right: 10px;
+    height: 22px;
+    color: #1d1d1f;
+    font-family: "OutfitSemiBold", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 22px;
+}
+
+main .main-container table .table-row-background-color {
+    background-color: #FFFCF2;
+}
+
+main .main-container table .table-row-border {
+    border-bottom: 1px solid #979797;
+}
+
+
+
+main .main-container .inner-table, th, td {
+    border-collapse: collapse;
+    padding: 0;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    vertical-align: middle;
+}
+
+
+
+.custom-error-class
+{
+    color: #ff3232 !important;
+}
+
+
+main .main-container .checkbox-container .checkbox-text
+{
+    padding-top: 5px;
+}
+
+main .main-container .btn-cancel {
+    width: 120px;
+    height: 46px;
+    margin-right: 10px;
+    background-color: transparent;
+    border-radius: 8px;
+    border: 2px solid #232f64;
+    font-size: 18px;
+    color: #232f64;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    padding: 0px;
+}
+main .main-container .btn-cancel a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #232f64;
+}
+main .main-container .btn-submit {
+    width: 160px;
+    height: 46px;
+    background-color: #232f64;
+    border: 2px solid #060b25;
+    color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    padding: 0px;
+}
+main .main-container .btn-submit a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+main .main-container .toggle-label{
+        width: 61px;
+        height: 20px;
+        color: #1d1d1f;
+        font-family: "OutfitRegular", Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 500;      
+        margin-right: 9px;
+        margin-top: 5px;
+}
+
+main .main-container .toggle-text{
+    
+    color: #1d1d1f;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+
+}
+
+main .main-container .tw-toggle {
+    /* background: #95A5A6; */
+    display: inline-block;
+    height: 26px;
+    width: 70px;
+    border-radius: 6px;
+    background-color: #d8d8d8;
+    position: relative;
+    border: 1px solid #b6b6b6;
+    margin-right: 23px;
+  }
+
+
+
+  main .main-container  .tw-toggle label {
+    text-align: center;
+    font-family: sans-serif;
+    display: inline-block;
+    color: #95a5a6;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    text-align: center;
+    padding: 2px 3px;
+    font-size: 15px;
+    margin-left: 7px;
+    cursor: pointer;
+  }
+
+  main .main-container .tw-toggle input {
+    /* display: none; */
+    position: absolute;
+    z-index: 3;
+    opacity: 0;
+    height: 26px;
+    width: 23px;
+    cursor: pointer;
+  }
+
+  main .main-container  .tw-toggle span {
+    height: 26px;
+    width: 35px;
+    /* line-height: 21px; */
+    /* border-radius: 50%; */
+    background: #fff;
+    display: block;
+    position: absolute;
+    left: 22px;
+    top: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  main .main-container  .tw-toggle input[value="false"]:checked ~ span {
+    background: #ff2525;
+    left: 0;
+    height: 25px;
+    top: 0;
+    border-radius: 5px 0px 0px 5px;
+  }
+
+  main .main-container  .tw-toggle input[value="true"]:checked ~ span {
+    background: #3d9973;
+    left: 35px;
+    height: 25px;
+    top: 0;
+    border-radius: 0px 5px 5px 0px;
+  }
+  main .main-container .tw-toggle input[value="-1"]:checked ~ span {
+    background: #95a5a6;
+    left: 23px;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    border: 1px solid #eeeeee;
+    background-color: white;
+    margin-top: 1px;
+    margin-left: 3px;
+  }
+
+  main .main-container .tw-toggle input[value="false"]:checked + label,
+  main .main-container .tw-toggle input[value="true"]:checked + label {
+    color: #fff;
+  }
+  main .main-container .tw-toggle input[value="-1"]:checked + label {
+    color: #fff;
+  }
+
+  main .main-container .next-and-save-button-image{
+    background-color: white;
+    border-radius: 50%;
+    height: 46px;
+    width: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main .main-container .next-and-save-button-text{
+    line-height: 23px;
+    color: #232f64;
+    font-family: "OutfitSemiBold", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-right: 10px;  
+  }

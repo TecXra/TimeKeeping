@@ -1,0 +1,558 @@
+@font-face {
+    font-family: "OutfitRegular";
+    src: url("../fonts/Outfit-Regular.ttf") format("opentype");
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: "OutfitSemiBold";
+    src: url("../fonts/Outfit-SemiBold.ttf") format("opentype");
+    font-weight: normal;
+    font-style: italic;
+}
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: auto;
+}
+.head-bar {
+    height: 12px;
+    background: linear-gradient(90deg, #2b5098 0%, #a3bef1 100%);
+    min-width: 1440px;
+}
+header {
+    min-width: 1440px;
+    height: 78px;
+    background-color: #232F64;
+}
+header .header-logo {
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+header .header-logo-text{
+    color: white;
+    font-size: 25px;
+    font-family: "OutfitMedium", Arial, sans-serif;
+    margin-left: 20px;
+    margin-top: 36px;
+height:32px
+}
+header .header-container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+main {
+    flex: 1;
+    min-width: 1440px;
+    background: linear-gradient(to bottom, #F2F0EB, #EFE9E1);
+}
+
+footer{
+    min-width: 1440px;
+    background-color: #EFE9E1;
+}
+footer .footer-container
+{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 18px;
+}
+footer p {
+    margin: 0;
+    margin-bottom: 0px;
+    color: #232f64;
+    line-height: 16px;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+}
+main .main-container{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+main .main-container .heading-section{
+    margin-top: 36px;
+}
+.top-back-link
+{
+    color: #333333;
+    font-family: "OutfitSemiBold", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+}
+main .main-container .heading-section h1{ 
+    font-size: 40px;
+    height: 49px;
+    line-height: 50px;
+    margin-top: 18px;
+    margin-bottom: 4px;
+    /* width: 347px; */
+    font-family: "OutfitSemiBold", Arial, sans-serif;
+    font-weight: 600;
+    color: #1d1d1f;
+}
+
+main .main-container .heading-section p{
+    height: 19px;
+    /* width: 391px; */
+    line-height: 19px;
+    margin: 0;
+    color: #1d1d1f;
+    font-family: "OutfitSemiBold", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+
+
+
+
+main .main-container .heading-section .retrieve-timesheet-section {
+    margin-top: 33px;
+}
+main .main-container .heading-section .retrieve-timesheet-section p {
+    height: 18px;
+    color: #333333;
+    font-family: "OutfitSemiBold", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 0px;
+    line-height: 18px;
+}
+main .main-container .heading-section .week-label {
+    height: 18px;
+    /* margin-top: 29px; */
+    margin-bottom: 4px;
+    color: #333333;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 19px;
+}
+
+main .main-container .heading-section .timesheet-detail-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1200px;
+    margin-top: 23px;
+    margin-bottom: 30px;
+    color: #1d1d1f;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    padding-right: 17px;
+}
+
+main .main-container .heading-section .timesheet-detail-department-section {
+    align-items: center;
+    width: 1200px;
+    margin-top: 23px;
+    margin-bottom: 30px;
+    color: #1d1d1f;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    padding-right: 17px;
+}
+
+
+main .main-container .heading-section  strong{
+    color: #1d1d1f;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.status-icon-text-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px !important;
+}
+main .main-container .heading-section .heading-detail-status-section {
+    height: 30px;
+    display: inline-block;
+    width: 120px;
+    border-radius: 14px;
+    background: #ffffff;
+    background-blend-mode: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    /* margin-top: -7px; */
+}
+main .main-container .heading-section .status-icon {
+    height: 12px;
+    width: 12px;
+    border: 2px solid #0c5902;
+    background-color: #5caf51;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+main .main-container table {
+    width: 1200px;
+    margin-bottom: 78px;
+}
+main .main-container table .table-heading {
+    height: 50px;
+    border: none;
+    background-color: #e0e0e0;
+    text-align: left;
+    font-family: "OutfitRegular", Arial, sans-serif;
+}
+
+main .main-container table .status-image{
+    position: relative;
+    top: 3px;
+    margin-right: 5px;
+}
+
+main .main-container table .table-heading th:first-child {
+    border-top-left-radius: 12px; 
+    border: none;
+}
+  
+main .main-container table  .table-heading th:last-child {
+    border-top-right-radius: 12px;
+}
+
+main .main-container table .table-footer td:first-child {
+    border-bottom-left-radius: 12px; 
+    border: none;
+}
+  
+main .main-container table  .table-footer td:last-child {
+    border-bottom-right-radius: 12px;
+}
+
+main .main-container table .table-footer-department td:first-child {
+    border-bottom-left-radius: 12px; 
+}
+  
+main .main-container table  .table-footer-department td:last-child {
+    border-bottom-right-radius: 12px;
+}
+
+  main .main-container table tr {
+    background-color: white;
+}
+
+main .main-container table .table-heading th {
+    /* border: 1px solid #e0e0e0; */
+    height: 20px;
+    color: #333333;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+main .main-container table, th, td {
+    border-collapse: collapse;
+    padding: 0;
+    font-family: "OutfitRegular", Arial, sans-serif;
+}
+
+/* main .main-container table, tr:nth-child(odd){
+    background-color: #F7F9FF;
+} */
+
+main .main-container table .table-row-style {
+    /* border: 1px solid #aaaaaa; */
+    border-right: none;
+    border-left: none;
+    height: 50px;
+    color: #1d1d1f;
+    font-size: 15px;
+    font-weight: 500;
+}
+main .main-container table .table-row-style.hours-count,
+.hours-count
+{
+    text-align: center;
+    font-weight: 600;
+}
+main .main-container table .table-row-style-select {
+    background-color: white;
+    border: 0;
+    height: 60px;
+    text-align: center;
+}
+main .main-container table .table-footer {
+    border-top: 1px solid #aaaaaa;
+    background-color: #e0e0e0;
+    height: 50px;
+}
+main .main-container table .table-footer .table-footer-content {
+    text-align: center;
+    color: #1d1d1f;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23px;
+    background-color: #F0DC00;
+}
+main .main-container table .table-footer .total-hours-text {
+    width: 272px;
+    text-align: end;
+    padding-right: 10px;
+    height: 22px;
+    color: #1d1d1f;
+    font-family: "OutfitSemiBold", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 22px;
+}
+
+main .main-container table .table-row-background-color {
+    background-color: #FFFCF2;
+}
+
+main .main-container table .table-row-border {
+    border-bottom: 1px solid #979797;
+}
+
+main .main-container .btn-search {
+    width: 160px;
+    height: 46px;
+    background-color: #232f64;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    margin-top: 22px;
+    font-weight: 600;
+    border: 2px solid #060B25;
+}
+
+  
+main .main-container .heading-section .custom-select {
+    width: 300px;
+    /* height: 44px; */
+    font-size: 14px;
+    border-radius: 4px;
+    text-align: justify;
+    background-color: #fff;
+    border: 1px solid #cccccc;
+    padding-left: 15px;
+    color: #333;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-family: "OutfitRegular", Arial, sans-serif;
+
+}
+
+main .main-container .custom-select-table {
+    border: 0;
+    height: 60px;
+    background-color: transparent;
+    color: #333;
+    width: 110px;
+    padding-left: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+main .main-container select.custom-select {
+    background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+        linear-gradient(135deg, gray 50%, transparent 50%),
+        linear-gradient(to right, #ccc, #ccc);
+    background-position: calc(101% - 20px) calc(1em + 2px),
+        calc(101% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0px;
+    background-size: 5px 5px, 5px 5px, 1px 100%;
+    background-repeat: no-repeat;
+}
+
+main .main-container select.custom-select:focus {
+    background-image: linear-gradient(45deg, #cccccc 50%, transparent 50%),
+        linear-gradient(135deg, transparent 50%, #cccccc 50%),
+        linear-gradient(to right, #ccc, #ccc);
+    background-position: calc(101% - 15px) 1em, calc(101% - 20px) 1em,
+        calc(100% - 2.5em) 0px;
+    background-size: 5px 5px, 5px 5px, 1px 100%;
+    background-repeat: no-repeat;
+    border-color: #cccccc;
+    outline: 0;
+}
+
+.main-container .retrieve-timesheet-section .radio-container {
+    display: block;
+    position: relative;
+    padding-left: 34px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 26px;
+    color: #333333;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Hide the browser's default radio button */
+.main-container .retrieve-timesheet-section .radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.main-container .retrieve-timesheet-section .radio-container .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 26px;
+    width: 26px;
+    background-color: #ccc; /* Set the default background color */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+/* On mouse-over, add a grey background color */
+.main-container .retrieve-timesheet-section .radio-container:hover input ~ .checkmark {
+    background-color: #bbb;
+}
+
+/* When the radio button is checked, change the background */
+.main-container .retrieve-timesheet-section .radio-container input:checked ~ .checkmark { 
+    background-color: #232f64;
+}
+
+/* Create the indicator (the dot/circle - always visible but changes color when checked) */
+.main-container .retrieve-timesheet-section .radio-container .checkmark:after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white; /* Default dot color */
+}
+
+/* Change the dot color when checked */
+.main-container .retrieve-timesheet-section .radio-container input:checked ~ .checkmark:after {
+    background: white !important; /* Dot color when checked */
+}
+
+main .main-container .table-search-container {
+    height: 70px;
+    background-color: #adadad;
+    border-radius: 10px 10px 0px 0px;
+    margin-top: 29px;
+    padding: 15px 21px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .main-container .table-search-container input[type="text"] {
+    width: 1030px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url("../images/search.svg");
+    background-position: 10px 7px;
+    background-repeat: no-repeat;
+    padding: 15px 20px 12px 40px;
+    background-blend-mode: hard-light;
+}
+
+main .main-table .table-row {
+    height: 50px;
+}
+
+.hidden-row {
+    display: none;
+}
+.toggle-icon {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+main .main-container .inner-table {
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #aaa;
+    margin-bottom: 30px;
+}
+main .main-container .inner-table tr {
+    background-color: #F2F2F2;
+    border: 1px dashed #aaa;
+}
+
+main .main-container .inner-table, th, td {
+    border-collapse: collapse;
+    padding: 0;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    vertical-align: middle;
+}
+main .main-container .inner-table, td
+{
+    color: #1d1d1f;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+main .main-container .inner-table .inner-table-heading {
+    height: 50px;
+    border: none;
+    text-align: left;
+    /* font-family: "OutfitRegular", Arial, sans-serif; */
+    text-transform: capitalize;
+    color: #333333;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+}
+main .main-container .inner-table .inner-table-heading .inner-table-day-name {
+    color: #1D1D1F;
+}
+main .main-container .inner-table .inner-table-row-style {
+    height: 40px;
+    font-family: "OutfitRegular", Arial, sans-serif;
+}
+.timesheetHistory-table
+{
+    display:none;
+    margin-top: 29px;
+}
+.custom-error-class
+{
+    color: #ff3232 !important;
+}
+
+.bg-lightSky{
+    background-color: #f7f9ff;
+}
+.bg-white{
+    background-color: white;
+}

@@ -1,0 +1,472 @@
+@font-face {
+    font-family: "OutfitRegular";
+    src: url("../fonts/Outfit-Regular.ttf") format("opentype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "OutfitSemiBold";
+    src: url("../fonts/Outfit-SemiBold.ttf") format("opentype");
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+	font-family: "OutfitMedium";
+	src: url("../fonts/Outfit-Medium.ttf") format("opentype");
+	font-weight: normal;
+	font-style: italic;
+}
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: auto;
+}
+.head-bar {
+    height: 12px;
+    background: linear-gradient(90deg, #2b5098 0%, #a3bef1 100%);
+    min-width: 1440px;
+}
+header {
+    min-width: 1440px;
+    height: 78px;
+    background-color: #232F64;
+}
+header .header-logo {
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+header .header-logo-text{
+    color: white;
+    font-size: 25px;
+    font-family: "OutfitMedium", Arial, sans-serif;
+    margin-left: 20px;
+    margin-top: 36px;
+height:32px
+}
+header .header-container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+main {
+    flex: 1;
+    min-width: 1440px;
+    background: linear-gradient(to bottom, #F2F0EB, #EFE9E1);
+}
+
+footer{
+    min-width: 1440px;
+    background-color: #EFE9E1;
+}
+footer .footer-container
+{
+    width: 1200px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 18px;
+}
+footer p {
+    margin: 0;
+    margin-bottom: 0px;
+    color: #232f64;
+    line-height: 16px;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+}
+
+main .main-container{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+main .main-container .heading-section{
+    margin-top: 36px;
+    font-family: "OutfitRegular", Arial, sans-serif;
+}
+.top-back-link
+{
+    color: #333333;
+    font-family: "OutfitSemiBold", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+}
+/* main .main-container .heading-section h1{ 
+    font-size: 40px;
+    height: 49px;
+    margin-top: 19px;
+    margin-bottom: 5px;
+    width: 347px;
+    font-family: "OutfitSemiBold", Arial, sans-serif;
+    font-weight: 600;
+    color: #1d1d1f;
+}
+
+main .main-container .heading-section p{
+    height: 18px;
+    width: 391px;
+    margin: 0;
+    color: #1d1d1f;
+    font-family: "OutfitSemiBold", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+} */
+main .main-container .heading-section .week-label{
+    height: 18px;
+    margin-top: 33px;
+    margin-bottom: 4px;
+    color: #333333;
+    font-family: "OutfitSemiBold", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 19px;
+}
+
+main .main-container table{
+    width: 1200px;
+    margin-top: 25px;
+    /* background-color: #ffffff; */
+}
+main .main-container table .table-heading{
+    height: 50px;
+    border: none;
+    background-color: #E1DCCF;
+    text-align: left;
+}
+
+.table-heading th:first-child {
+    border-top-left-radius: 12px; 
+    border: none;
+}
+  
+  .table-heading th:last-child {
+    border-top-right-radius: 12px;
+
+  }
+
+  main .main-container table tr {
+    background-color: white;
+}
+
+main .main-container table .table-heading th {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333333;
+    text-transform: uppercase;        
+    font-family: "OutfitRegular", Arial, sans-serif;
+    padding: 18px 0px 15px;
+}
+
+
+main .main-container table, th, td {
+    border-collapse: collapse;
+    padding: 0;
+    font-family: "OutfitRegular", Arial, sans-serif;
+}
+
+main .main-container table .table-row-style{
+    border: 1px solid #AAAAAA;
+    height: 60px;
+    text-align: center;
+    border-left: none;
+    border-right: none;
+    vertical-align: middle;
+}
+main .main-container table .table-row-style .day-name{
+    width: 38px;
+    height: 22px;
+    color: #1d1d1f;
+    font-family: "OutfitSemiBold", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+main .main-container table .table-row-style .date{
+    width: 49px;
+    height: 18px;
+    color: #333333;
+    font-family: "OutfitSemiBold", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+main .main-container table .table-row-style.clock-time input,
+main .main-container table .table-row-style .custom-select-table.clock-time input
+{
+    color: #333;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    border: 1px solid #AAA;
+    height: 44px;
+    text-align: center;
+    width: 110px;
+    background-color: white;
+}
+main .main-container table .table-row-style.clock-time input:focus-visible,
+main .main-container table .table-row-style .custom-select-table.clock-time input:focus-visible
+{
+    outline: none;
+}
+main .main-container table .table-row-style-select{
+    background-color: white;
+    border: 0;
+    height: 60px;
+    text-align: center;
+}
+
+
+main .main-container table .working-hours-col {
+    border-right: none;
+    font-size: 18px;
+    font-family: "OutfitMedium", Arial, sans-serif;
+}
+
+
+main .main-container table .table-footer{
+    /* border: 1px solid #AAAAAA; */
+    background-color: #E1DCCF;
+    height: 50px;
+    border-left: none;
+}
+
+
+.table-footer td:first-child {
+    border-bottom-left-radius: 12px; 
+    border: none;
+}
+  
+  .table-footer td:last-child {
+    border-bottom-right-radius: 12px;
+
+  }
+
+main .main-container table .table-footer .table-footer-content{
+    border-left: 1px solid #AAA;
+    background-color: #F0DC00;
+    text-align: center;
+    padding: 15px 0px;
+    line-height: 23px;
+    font-size: 18px;
+    color: #1D1D1F;
+    font-family: "OutfitSemiBold", Arial, sans-serif;
+}
+.total_hours_td
+{
+    line-height: 20px;
+    font-size: 16px;
+    color: #1D1D1F;
+    font-family: "OutfitSemiBold", Arial, sans-serif;
+    width: 272px;
+    text-align: end;
+    padding-right: 10px;
+}
+main .main-container .btn-cancel{
+    width: 120px;
+    height: 46px;
+    margin-right: 10px;
+    background-color: transparent;
+    border-radius: 8px;
+    border: 2px solid #232F64;
+    font-size: 18px;
+    color: #232F64;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    padding: 0px;
+}
+main .main-container .btn-cancel a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #232f64;
+}
+main .main-container .btn-submit{
+    width: 160px;
+    height: 46px;
+    background-color: #232f64;
+    border: 2px solid #060B25;
+    color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    font-family: "OutfitRegular", Arial, sans-serif;
+    padding: 0px;
+}
+main .main-container .btn-submit a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+main .main-container  .custom-select-table{
+    border: 0;
+    height: 60px;
+    background-color: transparent;
+    width: 110px;
+    padding-left: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+main .main-container .custom-select-table-reason-tab{
+    border: 1px solid #AAA;
+    height: 44px;
+    padding: 16px;
+    background-color: white;
+    padding-left: 10px;
+    width: 217px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #AAA);
+    background-position:
+    calc(105% - 25px) calc(1em + 2px),
+    calc(105% - 21px) calc(1em + 2px),
+    calc(105% - 2.5em) 0px;
+    background-size:
+    5px 5px,
+    5px 5px,
+    1px 100%;
+    background-repeat: no-repeat;
+}
+main .main-container .custom-select-table-lunch{
+    border: 0;
+    height: 60px;
+    padding: 16px;
+    background-color: transparent;
+    padding-left: 14px;
+    width: 120px;
+    color: #333;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #AAA);
+    background-position:
+    calc(105% - 18px) calc(1em + 16px),
+    calc(105% - 13px) calc(1em + 16px),
+    calc(105% - 2.5em) 0px;
+    background-size:
+    5px 5px,
+    5px 5px,
+    1px 100%;
+    background-repeat: no-repeat;
+}
+
+main .main-container .custom-select-table-lunch.active:focus {
+    background-image:
+    linear-gradient(45deg, #cccccc 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, #cccccc 50%),
+    linear-gradient(to right, #ccc, #AAA);
+    background-position:
+    calc(105% - 15px) 28px,
+    calc(105% - 20px) 28px,
+    calc(105% - 2.5em) 0px;
+    background-size:
+    5px 5px,
+    5px 5px,
+    1px 100%;
+    background-repeat: no-repeat;
+    border-color: #cccccc;
+    outline: 0;
+}
+
+
+main .main-container .custom-select-table-lunch:focus-visible{
+    outline: none;
+}
+
+.custom-select-table-lunch .dropdown-menu {
+    position: absolute;
+    background-color: #fff;
+    margin-left: -15px;
+    box-shadow: 0 1px 2px rgb(204, 204, 204);
+    border-radius: 0px 0px 4px 4px;
+    overflow: hidden;
+    display: none;
+    overflow-y: auto;
+    z-index: 9;
+    border: 1px solid #cccccc;
+    margin-top: 221px;
+    width: 122px;
+}
+
+.custom-select-table .dropdown-menu {
+    position: absolute;
+    background-color: #fff;
+    margin-left: -11px;
+    box-shadow: 0 1px 2px rgb(204, 204, 204);
+    border-radius: 0px 0px 4px 4px;
+    overflow: hidden;
+    display: none;
+    overflow-y: auto;
+    z-index: 9;
+    border: 1px solid #cccccc;
+    margin-top: 284px;
+}
+
+.custom-select-table-lunch .dropdown-menu li {
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    padding: 14px 15px;
+    height: 40px;
+    border-top: 0px;
+    border-bottom: 1px solid #cccccc;
+
+} 
+
+.custom-select-table .dropdown-menu li {
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    padding: 14px 15px;
+    height: 40px;
+    width: 240px;
+    border-top: 0px;
+    border-bottom: 1px solid #cccccc;
+
+} 
+
+main .main-container .custom-select-table-reason-tab.active {
+    background-image:
+    linear-gradient(45deg, #cccccc 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, #cccccc 50%),
+    linear-gradient(to right, #ccc, #AAA);
+    background-position:
+    calc(105% - 20px) 18px,
+    calc(105% - 25px) 18px,
+    calc(105% - 2.5em) 0px;
+    background-size:
+    5px 5px,
+    5px 5px,
+    1px 100%;
+    background-repeat: no-repeat;
+    border-color: #cccccc;
+    outline: 0;
+}
+
+
+.ui-timepicker-standard{
+    font-size: 14px !important;
+    font-family: "OutfitRegular", Arial, sans-serif !important;
+    color: #333 !important;
+}

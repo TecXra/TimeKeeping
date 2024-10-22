@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Login Page</title>
+	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+	<div class="head-bar"></div>
+	<header>
+		<div class="header-container">
+			<div class="logo">
+				<img src="./images/logo.png" height="150" width="170" />
+			</div>
+		</div>
+	</header>
+	<main>
+		<div class="main-container">
+			<div class="login-page">
+				<div class="login-page-container">
+					<div class="login-form">
+						<div class="flex-center flex-column">
+							<img src="./images/login-page-logo.svg" height="60" width="119" />
+							<div class="form">
+								<div class="userName">
+									<label class="label">Username</label>
+									<input type="text" id="username" class="form-input" oninput="checkValidation(this)" placeholder="Enter" required/>
+								</div>
+								<div class="password">
+									<label class="label">Password</label>
+									<input type="password" id="password" class="form-input" oninput="checkValidation(this)" placeholder="Enter" required/>
+								</div>
+								<button class="login-button" id="login-button">
+									<a href="landingPage.html">
+										Login
+									</a>
+								</button>
+								<div class="forgot-password-text">
+									<a href="#">Forgot password?</a>
+								</div>
+							</div>
+						</div>
+						<div class="right-reserved-text">
+							© Borough of Manhattan Community College. All rights reserved
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+</html>

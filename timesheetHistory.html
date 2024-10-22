@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Timesheet History</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/timesheetHistory.css" />
+    <script src="./js/main.js"></script>
+  </head>
+  <body>
+    <div class="head-bar"></div>
+    <header>
+      <div class="header-container">
+        <div class="d-flex">
+          <img class="header-logo" src="./images/headerLogo.png" height="50" width="124" />
+          <span class="header-logo-text">Time Keeping</span>
+      </div> 
+        <div class="profile">
+          <div class="username-container">
+            <h3 class="username">Keitlin Smith</h3>
+            <h3 class="user_type">Employee</h3>
+          </div>
+          <img
+            src="https://ui-avatars.com/api/?name=Keitlin+Smith&background=ABD780"
+            class="profile-pic"
+          />
+          <div class="dropdown-menu" id="dropdown">
+            <a href="./index.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="main-container">
+        <div class="head-section heading-section">
+          <a href="./landingPage.html" class="top-back-link">
+            <i class="fa-solid fa-arrow-left" style="margin-right: 6px"></i>Back
+          </a>
+          <h1 class="page-title">Timesheet History</h1>
+          <p class="page-description">
+            Please select the week to view timesheet.
+          </p>
+          <div class="retrieve-timesheet-section">
+            <p>Retrieve Timesheet</p>
+            <div style="display: flex; margin-top: 10px">
+              <label class="radio-container">
+                <input
+                  type="radio"
+                  checked="checked"
+                  name="radio"
+                  value="me-section"
+                />
+                <span class="checkmark"></span>
+                <span class="radio-option-text">Me</span>
+              </label>
+              <label class="radio-container" style="margin-left: 45px">
+                <span class="radio-option-text">Search by Department</span>
+                <input type="radio" name="radio" value="department-section" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+
+          <div id="me-section" class="timesheetHistory-table">
+            <div class="week-label">Timeperiod</div>
+            <div class="form-select">
+              <div
+                class="custom-select"
+                id="custom-week-list-timesheet-history-me-section"
+              >
+                <div class="select">
+                  <span id="selected-value">Select</span>
+                </div>
+                <input type="hidden" name="selectedValue" id="hidden-input" />
+                <ul class="dropdown-menu" id="dropdown-menu"></ul>
+              </div>
+            </div>
+            <div class="d-none" id="me-section-table-container">
+              <div class="timesheet-detail-section">
+                <span> <strong>Manager Name:</strong> Albert Fin </span>
+                <span> <strong>Type:</strong> Weekly </span>
+                <span
+                  ><strong>Timeperiod:</strong
+                  ><span
+                    style="margin-left: 3px"
+                    id="selected-timeperiod"
+                  ></span
+                ></span>
+                <span> <strong>Submitted Date:</strong> 07-08-2023 </span>
+                <span class="status-icon-text-container">
+                  <strong>Status</strong>
+                  <span class="heading-detail-status-section">
+                    <span class="status-icon"></span>Approved
+                  </span>
+                </span>
+              </div>
+              <table>
+                <tr class="table-heading">
+                  <th style="width: 120px; padding-left: 18px">DAYS</th>
+                  <th style="width: 170px">DATE</th>
+                  <th style="width: 140px">CLOCK-IN</th>
+                  <th style="width: 140px">LUNCH-IN</th>
+                  <th style="width: 140px">LUNCH-OUT</th>
+                  <th style="width: 160px">CLOCK-OUT</th>
+                  <th style="width: 200px">REASON</th>
+                  <th style="width: 110px; text-align: center">HOURS</th>
+                </tr>
+                <tr class="table-row-border">
+                  <td
+                    style="width: 110px; padding-left: 18px; text-align: left"
+                    class="table-row-style"
+                  >
+                    Mon
+                  </td>
+                  <td class="table-row-style">07-01-2023</td>
+                  <td class="table-row-style">09:00 AM</td>
+                  <td class="table-row-style">05:00 PM</td>
+                  <td class="table-row-style">09:00 AM</td>
+                  <td class="table-row-style">05:00 PM</td>
+                  <td class="table-row-style"></td>
+                  <td class="table-row-style hours-count">08</td>
+                </tr>
+                <tr class="table-row-background-color table-row-border">
+                  <td
+                    style="width: 110px; padding-left: 18px; text-align: left"
+                    class="table-row-style"
+                  >
+                    Tue
+                  </td>
+                  <td class="table-row-style">07-02-2023</td>
+                  <td class="table-row-style">09:00 AM</td>
+                  <td class="table-row-style">05:00 PM</td>
+                  <td class="table-row-style">09:00 AM</td>
+                  <td class="table-row-style">05:00 PM</td>
+                  <td class="table-row-style"></td>
+                  <td class="table-row-style hours-count">08</td>
+                </tr>
+                <tr class="table-row-border">
+                  <td
+                    style="width: 110px; padding-left: 18px; text-align: left"
+                    class="table-row-style"
+                  >
+                    Wed
+                  </td>
+                  <td class="table-row-style">07-03-2023</td>
+                  <td class="table-row-style">09:00 AM</td>
+                  <td class="table-row-style">05:00 PM</td>
+                  <td class="table-row-style">09:00 AM</td>
+                  <td class="table-row-style">05:00 PM</td>
+                  <td class="table-row-style"></td>
+                  <td class="table-row-style hours-count">08</td>
+                </tr>
+                <tr class="table-row-background-color table-row-border">
+                  <td
+                    style="width: 110px; padding-left: 18px; text-align: left"
+                    class="table-row-style"
+                  >
+                    Thr
+                  </td>
+                  <td class="table-row-style">07-04-2023</td>
+                  <td class="table-row-style"></td>
+                  <td class="table-row-style"></td>
+                  <td class="table-row-style"></td>
+                  <td class="table-row-style"></td>
+                  <td class="table-row-style"></td>
+                  <td class="table-row-style hours-count">00</td>
+                </tr>
+                <tr class="table-row-border">
+                  <td
+                    style="width: 110px; padding-left: 18px; text-align: left"
+                    class="table-row-style"
+                  >
+                    Fri
+                  </td>
+                  <td class="table-row-style">07-05-2023</td>
+                  <td class="table-row-style">09:00 AM</td>
+                  <td class="table-row-style">05:00 PM</td>
+                  <td class="table-row-style">09:00 AM</td>
+                  <td class="table-row-style">05:00 PM</td>
+                  <td class="table-row-style"></td>
+                  <td class="table-row-style hours-count">08</td>
+                </tr>
+                <tr class="table-row-background-color table-row-border">
+                  <td
+                    style="width: 110px; padding-left: 18px; text-align: left"
+                    class="table-row-style custom-error-class"
+                  >
+                    Sat
+                  </td>
+                  <td class="table-row-style">07-06-2023</td>
+                  <td class="table-row-style"></td>
+                  <td class="table-row-style"></td>
+                  <td class="table-row-style"></td>
+                  <td class="table-row-style"></td>
+                  <td class="table-row-style"></td>
+                  <td class="table-row-style hours-count">00</td>
+                </tr>
+                <tr>
+                  <td
+                    style="width: 110px; padding-left: 18px; text-align: left"
+                    class="table-row-style custom-error-class"
+                  >
+                    Sun
+                  </td>
+                  <td class="table-row-style">07-07-2023</td>
+                  <td class="table-row-style"></td>
+                  <td class="table-row-style"></td>
+                  <td class="table-row-style"></td>
+                  <td class="table-row-style"></td>
+                  <td class="table-row-style"></td>
+                  <td class="table-row-style hours-count">00</td>
+                </tr>
+                <tr class="table-footer">
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+
+                  <td class="total-hours-text">WEEKLY HOURS</td>
+                  <td class="table-footer-content"><div>00</div></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <div id="department-section" class="timesheetHistory-table">
+            <div style="display: flex">
+              <div style="margin-right: 20px">
+                <label class="week-label">Department</label>
+                <div class="form-select" style="margin-top: 4px">
+                  <div class="custom-select">
+                    <div class="select">
+                      <span id="selected-valu">Select</span>
+                    </div>
+                    <input
+                      type="hidden"
+                      name="selectedValue"
+                      id="hidden-input"
+                    />
+                    <ul class="dropdown-menu" id="">
+                      <li value="null">Select</li>
+                      <li value="1">1</li>
+                      <li value="2">2</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div style="margin-right: 20px">
+                <label class="week-label">Type</label>
+                <div class="form-select" style="margin-top: 4px">
+                  <div class="custom-select">
+                    <div class="select">
+                      <span id="selected-valu">Select</span>
+                    </div>
+                    <input
+                      type="hidden"
+                      name="selectedValue"
+                      id="hidden-input"
+                    />
+                    <ul class="dropdown-menu" id="">
+                      <li value="null">Select</li>
+                      <li value="1">1</li>
+                      <li value="2">2</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div style="margin-right: 20px">
+                <label class="week-label">Timeperiod</label>
+                <div class="form-select" style="margin-top: 4px">
+                  <div class="custom-select">
+                    <div
+                      class="select"
+                      id="custom-week-list-timesheet-history-department-section"
+                    >
+                      <span id="selected-value-2">Select</span>
+                    </div>
+                    <input
+                      type="hidden"
+                      name="selectedValue"
+                      id="hidden-input"
+                    />
+                    <ul class="dropdown-menu" id="dropdown-menu-2"></ul>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn-search">Search</button>
+            </div>
+            <div class="d-none" id="department-section-table-container">
+              <div class="timesheet-detail-department-section">
+                <span style="margin-right: 60px">
+                  <strong>Total Employee:</strong> 08
+                </span>
+                <span> <strong>Manager:</strong>John Doe</span>
+              </div>
+              <table class="main-table">
+                <thead>
+                  <tr class="table-heading">
+                    <th style="width: 50px"></th>
+                    <th style="width: 160px">NAME</th>
+                    <th style="width: 160px">EMPLOYEE ID</th>
+                    <th style="width: 140px">TYPE</th>
+                    <th style="width: 200px">TIMEPERIOD</th>
+                    <th style="text-align: center; width: 200px">WEEKLY HOURS</th>
+                    <th style="width: 150px">STATUS</th>
+                    <th style="text-align: center">ACTION</th>
+                  </tr>
+                </thead>
+                <tbody id="table-body">
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <p>
+          &copy; Borough of Manhattan Community College. All rights reserved
+        </p>
+      </div>
+    </footer>
+    <script>
+      $(document).ready(function () {
+        $(".profile-pic").click(function () {
+          $("#dropdown").toggle();
+        });
+        $(window).click(function (event) {
+          if (!$(event.target).closest(".profile").length) {
+            $("#dropdown").hide();
+          }
+        });
+      });
+
+      const tableData = [
+      { id:1,name: "John Smith", employeeId: "1234567890", type: "Weekly", timePeriod: "07-01-2023 - 07-07-2023", weeklyHours: 32, status: "Approved", statusImage: "./images/status-approved.png" },
+      { id:2,name: "John Smith", employeeId: "1234567890", type: "Weekly", timePeriod: "07-01-2023 - 07-07-2023", weeklyHours: 32, status: "Rejected", statusImage: "./images/status-rejected.png" },
+      { id:3,name: "John Smith", employeeId: "1234567890", type: "Weekly", timePeriod: "07-01-2023 - 07-07-2023", weeklyHours: 32, status: "Approved", statusImage: "./images/status-approved.png" },
+      { id:4,name: "John Smith", employeeId: "1234567890", type: "Weekly", timePeriod: "07-01-2023 - 07-07-2023", weeklyHours: 32, status: "Approved", statusImage: "./images/status-approved.png" },
+      { id:5,name: "John Smith", employeeId: "1234567890", type: "Weekly", timePeriod: "07-01-2023 - 07-07-2023", weeklyHours: 32, status: "Rejected", statusImage: "./images/status-rejected.png" },
+      { id:6,name: "John Smith", employeeId: "1234567890", type: "Weekly", timePeriod: "07-01-2023 - 07-07-2023", weeklyHours: 32, status: "Approved", statusImage: "./images/status-approved.png" },
+      { id:7,name: "John Smith", employeeId: "1234567890", type: "Weekly", timePeriod: "07-01-2023 - 07-07-2023", weeklyHours: 32, status: "Approved", statusImage: "./images/status-approved.png" }
+    ];
+
+    const tableBody = document.getElementById('table-body');
+
+    tableData.forEach((employee, index) => {
+      const row = document.createElement('tr');
+      row.className = index % 2 === 0 ? 'table-row table-row-border' : 'table-row table-row-background-color table-row-border';
+      row.id = `single-employee-row-${index + 1}`;
+      row.innerHTML = `
+        <td style="width: 50px"></td>
+        <td id="employee-name-${index + 1}">${employee.name}</td>
+        <td id="employee-id-${index + 1}">${employee.employeeId}</td>
+        <td id="type-${index + 1}">${employee.type}</td>
+        <td id="timeperiod-${index + 1}">${employee.timePeriod}</td>
+        <td style="text-align: center">${employee.weeklyHours}</td>
+        <td>
+          <img src="${employee.statusImage}" height="20" width="20" class="status-image" />
+          ${employee.status}
+        </td>
+        <td style="text-align: center">
+          <img src="./images/right-arrow.svg" height="26" width="26" class="toggle-icon" data-row="${index + 1}" />
+        </td>
+      `;
+
+      tableBody.appendChild(row);
+
+      if (index === tableData.length - 1) {
+      row.classList.add("table-footer-department");
+      row.classList.remove("table-row-border");
+    }
+
+});
+ 
+document.querySelectorAll(".toggle-icon").forEach((icon) => {
+      icon.addEventListener("click", function () {
+        const rowId = this.getAttribute("data-row");
+        const nameCell = document.querySelector(`#employee-name-${rowId}`);
+        const idCell = document.querySelector(`#employee-id-${rowId}`);
+        const typeCell = document.querySelector(`#type-${rowId}`);
+        const timeperiodCell = document.querySelector(`#timeperiod-${rowId}`);
+
+        if (nameCell && idCell && typeCell && timeperiodCell) {
+          const nameValue = nameCell.textContent;
+          const idValue = idCell.textContent;
+          const typeValue = typeCell.textContent;
+          const timeperiodValue = timeperiodCell.textContent;
+
+          const employeeDetails = {
+            id:rowId,
+            name: nameValue,
+            employeeId: idValue,
+            type: typeValue,
+            timeperiod: timeperiodValue,
+            tableName:"timesheetHistory"
+          };
+
+          // Save the object in localStorage
+          localStorage.setItem("employeeDetails", JSON.stringify(employeeDetails));
+
+          // Redirect to the next page
+          window.location.href = "detailPage.html";
+        } else {
+          console.error("One or more elements not found for row ID:", rowId);
+        }
+      });
+    });
+
+      $(document).ready(function () {
+        var tables = $(".timesheetHistory-table");
+
+        // Hide all tables initially
+        tables.hide();
+
+        // Show the table corresponding to the checked radio button on page load
+        var checkedRadio = $('input[name="radio"]:checked');
+        if (checkedRadio.length > 0) {
+          $("#" + checkedRadio.val()).show();
+        }
+
+        // Add change event listener for radio buttons
+        $('input[name="radio"]').on("change", function () {
+          tables.hide();
+          $("#" + $(this).val()).show();
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const selectElement = document.getElementById(
+          "custom-week-list-timesheet-history-me-section"
+        );
+        const dropdownMenu = document.getElementById("dropdown-menu");
+        const selectedValueElement = document.getElementById("selected-value");
+        const hiddenInputElement = document.getElementById("hidden-input");
+
+        function formatDate(date) {
+          const month = String(date.getMonth() + 1).padStart(2, "0");
+          const day = String(date.getDate()).padStart(2, "0");
+          return `${month}/${day}`;
+        }
+        // Generate week options from current date to next five weeks
+        const today = new Date();
+        for (let i = 0; i < 5; i++) {
+          const startDate = new Date(today);
+          startDate.setDate(startDate.getDate() + i * 7);
+          const endDate = new Date(startDate);
+          endDate.setDate(endDate.getDate() + 6);
+
+          const startDateString = formatDate(startDate);
+          const endDateString = formatDate(endDate);
+          const optionText = `${startDateString} - ${endDateString}`;
+
+          const li = document.createElement("li");
+          li.setAttribute("value", i + 1);
+          li.textContent = optionText;
+          li.addEventListener("click", function () {
+            showMeSectionTimeSheetHistoryTableData(optionText);
+          });
+
+          dropdownMenu.appendChild(li);
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const selectElement = document.getElementById(
+          "custom-week-list-timesheet-history-department-section"
+        );
+        const dropdownMenu = document.getElementById("dropdown-menu-2");
+        const selectedValueElement = document.getElementById("selected-value");
+        const hiddenInputElement = document.getElementById("hidden-input");
+
+        function formatDate(date) {
+          const month = String(date.getMonth() + 1).padStart(2, "0");
+          const day = String(date.getDate()).padStart(2, "0");
+          return `${month}/${day}`;
+        }
+        // Generate week options from current date to next five weeks
+        const today = new Date();
+        for (let i = 0; i < 5; i++) {
+          const startDate = new Date(today);
+          startDate.setDate(startDate.getDate() + i * 7);
+          const endDate = new Date(startDate);
+          endDate.setDate(endDate.getDate() + 6);
+
+          const startDateString = formatDate(startDate);
+          const endDateString = formatDate(endDate);
+          const optionText = `${startDateString} - ${endDateString}`;
+
+          const li = document.createElement("li");
+          li.setAttribute("value", i + 1);
+          li.textContent = optionText;
+          li.addEventListener("click", function () {
+            showDepartmentSectionTimeSheetHistoryTableData(optionText);
+          });
+
+          dropdownMenu.appendChild(li);
+        }
+      });
+
+      function showMeSectionTimeSheetHistoryTableData(value) {
+        // const select = document.getElementById(
+        //   "custom-week-list-timesheet-history-me-section"
+        // );
+        const selectedValueElement = document.getElementById("selected-value");
+        const selectedTimeperiodElement = document.getElementById(
+          "selected-timeperiod"
+        );
+
+        selectedValueElement.textContent = value;
+        selectedTimeperiodElement.textContent = value;
+
+        if (value != "null" && value != null) {
+          document
+            .getElementById("me-section-table-container")
+            .classList.add("d-block");
+          document
+            .getElementById("me-section-table-container")
+            .classList.remove("d-none");
+        }
+        if (value == null || value == "null") {
+          document
+            .getElementById("me-section-table-container")
+            .classList.remove("d-block");
+          document
+            .getElementById("me-section-table-container")
+            .classList.add("d-none");
+        }
+      }
+
+      function showDepartmentSectionTimeSheetHistoryTableData(value) {
+        // const select = document.getElementById(
+        //   "custom-week-list-timesheet-history-department-section"
+        // );
+        const selectedValueElement =
+          document.getElementById("selected-value-2");
+        selectedValueElement.textContent = value; // Update the displayed selected text
+
+        if (value != "null" && value != null) {
+          document
+            .getElementById("department-section-table-container")
+            .classList.add("d-block");
+          document
+            .getElementById("department-section-table-container")
+            .classList.remove("d-none");
+          isAnyButtonDisabled();
+          showTimePicker();
+        }
+        if (value == null || value == "null") {
+          document
+            .getElementById("department-section-table-container")
+            .classList.remove("d-block");
+          document
+            .getElementById("department-section-table-container")
+            .classList.add("d-none");
+        }
+      }
+
+      /*Dropdown Menu*/
+      $(".custom-select").click(function () {
+        $(this).attr("tabindex", 1).focus();
+        $(this).toggleClass("active");
+        $(this).find(".dropdown-menu").slideToggle(300);
+      });
+      $(".custom-select").focusout(function () {
+        $(this).removeClass("active");
+        $(this).find(".dropdown-menu").slideUp(300);
+      });
+      $(".custom-select .dropdown-menu li").click(function () {
+        $(this).parents(".custom-select").find("span").text($(this).text());
+        $(this)
+          .parents(".custom-select")
+          .find("input")
+          .attr("value", $(this).attr("id"));
+      });
+      /*End Dropdown Menu*/
+
+      $(".dropdown-menu li").click(function () {
+        var input =
+            "<strong>" +
+            $(this).parents(".custom-select").find("input").val() +
+            "</strong>",
+          msg = '<span class="msg">Hidden input value: ';
+        $(".msg").html(msg + input + "</span>");
+      });
+    </script>
+  </body>
+</html>

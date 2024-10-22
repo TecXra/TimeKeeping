@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Submit Leave Request - Employee</title>
+    <script src="https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.1/dist/index.umd.min.js"></script>
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/bundle.js"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/leaveRequest.css" />
+    <script src="./js/main.js"></script>
+  </head>
+
+  <body>
+    <div class="head-bar"></div>
+    <header>
+      <div class="header-container">
+        <div class="d-flex">
+          <img class="header-logo" src="./images/headerLogo.png" height="50" width="124" />
+          <span class="header-logo-text">Time Keeping</span>
+      </div> 
+        <div class="profile">
+          <div class="username-container">
+            <h3 class="username">Keitlin Smith</h3>
+            <h3 class="user_type">Employee</h3>
+          </div>
+          <img
+            src="https://ui-avatars.com/api/?name=Keitlin+Smith&background=ABD780"
+            class="profile-pic"
+          />
+          <div class="dropdown-menu" id="dropdown">
+            <a href="./index.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="main-container">
+        <div class="head-section heading-section">
+          <a href="./landingPage.html" class="top-back-link">
+            <i class="fa-solid fa-arrow-left" style="margin-right: 6px"></i>Back
+          </a>
+          <h1 class="page-title">Leave Request</h1>
+          <p class="page-description">
+            Please enter the details below to submit your leave request.
+          </p>
+        </div>
+        <div class="form-container">
+          <div class="form-data">
+            <div class="selects">
+              <div class="select-type">
+                <label class="form-label"> Leave Type </label>
+                <i><img src="./images/select-arrow.svg" height="5px" width="10px" alt="" /></i>
+                <div class="custom-select" style="margin-top: 6px;">
+                  <div class="select" id="custom-leave-type-list">
+                    <span id="selected-value">Select</span>
+                  </div>
+                  <input type="hidden" name="selectedValue" id="hidden-input" />
+                  <ul class="dropdown-menu" id="dropdown-menu"> 
+                    <li value="CCL" onclick="showDatePicker('CCL')">CCL - Child Care Leave</li>
+                    <li value="FML" onclick="showDatePicker('FML')">FML - Family Medical Leave</li>
+                    <li value="LWOP" onclick="showDatePicker('LWOP')">LWOP - Leave Without Pay</li>
+                    <li value="ML" onclick="showDatePicker('ML')">ML - Military Leave</li>
+                    <li value="PPL" onclick="showDatePicker('PPL')">PPL - Paid Parental Leave</li>
+                    <li value="WC" onclick="showDatePicker('WC')">WC - Worker's Compensation</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="d-none" id="date-picker-container">
+                <div class="select-date">
+                  <label class="form-label">Dates</label>
+                  <i><img src="./images/calendar.svg" alt="calender" /></i>
+                  <input type="text" placeholder="Select" id="datepicker" />
+                </div>
+              </div>
+            </div>
+            <div class="d-none" id="detail-section-container">
+              <div class="reason-text">
+                <label class="form-label">Reason (optional)</label>
+                <input type="text" placeholder="Enter" />
+              </div>
+              <div class="personal-time-container">
+                <h4>Personal Time-off</h4>
+                <h3 id="selected-dates"></h3>
+                <div class="hr"></div>
+                <div class="personal-stats">
+                  <span
+                    ><strong class="days-count" id="working-days"></strong>
+                    Working Days</span
+                  >
+                  <span
+                    ><strong class="days-count" id="non-working-days"></strong>
+                    Non-working Days</span
+                  >
+                  <span
+                    ><strong class="days-count" id="total-leave-days"></strong>
+                    Total Leave Days
+                  </span>
+                </div>
+              </div>
+              <div class="checkbox-container">
+                <label class="checkbox-inner-container">
+                  <input type="checkbox" id="checkbox" />
+                  <span class="checkmark"></span>
+                </label>
+                <p>I accept that all information entered is correct.</p>
+              </div>
+            </div>
+          </div>
+          <div class="d-none" id="time-off-section">
+            <div class="remaining-item-container">
+              <div class="items-heading">Remaining Time-offs</div>
+              <div class="bullets">
+                <div class="items-bullet">
+                  <div class="bullet-circle">
+                    <p>12</p>
+                  </div>
+                  <div class="bullet-text">Annual Leave</div>
+                </div>
+                <div class="items-bullet">
+                  <div class="bullet-circle">
+                    <p>08</p>
+                  </div>
+                  <div class="bullet-text">Sick Leave</div>
+                </div>
+                <div class="items-bullet">
+                  <div class="bullet-circle">
+                    <p>20</p>
+                  </div>
+                  <div class="bullet-text">Personal Time-off</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-none" id="buttons-section">
+          <hr class="checkbox-divider" width="1200px" />
+          <div
+            class="footer-buttons"
+            style="display: flex; justify-content: center; margin-bottom: 50px"
+          >
+            <button type="cancel" class="btn-cancel">
+              <a href="#">Cancel</a>
+            </button>
+            <button
+              type="submit"
+              class="btn-submit btn-disabled"
+              id="submitBtn"
+              disabled
+            >
+              <a href="#">Submit</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <p>
+          &copy; Borough of Manhattan Community College. All rights reserved
+        </p>
+      </div>
+    </footer>
+    <script>
+      $(document).ready(function () {
+        $(".profile-pic").click(function () {
+          $("#dropdown").toggle();
+        });
+        $(window).click(function (event) {
+          if (!$(event.target).closest(".profile").length) {
+            $("#dropdown").hide();
+          }
+        });
+      });
+
+      const picker = new Litepicker({
+        element: document.getElementById("datepicker"),
+        singleMode: false,
+        setup: (picker) => {
+          picker.on("selected", (date1, date2) => {
+            showDetailSection(date1.dateInstance, date2.dateInstance);
+          });
+        },
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var checkbox = document.getElementById("checkbox");
+        var submitBtn = document.getElementById("submitBtn");
+
+        checkbox.addEventListener("change", function () {
+          if (checkbox.checked) {
+            submitBtn.removeAttribute("disabled");
+            submitBtn.classList.remove("btn-disabled");
+          } else {
+            submitBtn.setAttribute("disabled", "disabled");
+            submitBtn.classList.add("btn-disabled");
+          }
+        });
+      });
+
+      function showDatePicker(value) {
+        const selectedValueElement = document.getElementById('selected-value');
+    selectedValueElement.textContent = value; // Update the displayed selected text
+
+        if (value != "null" && value != null) {
+          document
+            .getElementById("date-picker-container")
+            .classList.add("d-block");
+
+          document
+            .getElementById("date-picker-container")
+            .classList.remove("d-none");
+        }
+        if (value == null || value == "null") {
+          document
+            .getElementById("date-picker-container")
+            .classList.remove("d-block");
+
+          document
+            .getElementById("date-picker-container")
+            .classList.add("d-none");
+        }
+      }
+
+      function showDetailSection(date1, date2) {
+        const select = document.getElementById("datepicker");
+
+        if (select.value != "null" && select.value != null) {
+          document
+            .getElementById("detail-section-container")
+            .classList.add("d-block");
+          document.getElementById("time-off-section").classList.add("d-block");
+          document.getElementById("buttons-section").classList.add("d-block");
+
+          document
+            .getElementById("detail-section-container")
+            .classList.remove("d-none");
+          document
+            .getElementById("time-off-section")
+            .classList.remove("d-none");
+          document.getElementById("buttons-section").classList.remove("d-none");
+
+          const formattedDate1 = formatDate(new Date(date1));
+          const formattedDate2 = formatDate(new Date(date2));
+          const formattedDateRange = `${formattedDate1} - ${formattedDate2}`;
+          const { workingDays, nonWorkingDays, totalLeaveDays } =
+            calculateWorkingDays(new Date(date1), new Date(date2));
+          // Display formatted date range in the selected-time element
+          document.getElementById("selected-dates").textContent =
+            formattedDateRange;
+
+          document.getElementById("working-days").textContent = workingDays;
+
+          document.getElementById("non-working-days").textContent =
+            nonWorkingDays;
+
+          document.getElementById("total-leave-days").textContent =
+            totalLeaveDays;
+        }
+        if (select.value == null || select.value == "null") {
+          document
+            .getElementById("detail-section-container")
+            .classList.remove("d-block");
+          document
+            .getElementById("time-off-section")
+            .classList.remove("d-block");
+          document
+            .getElementById("buttons-section")
+            .classList.remove("d-block");
+
+          document
+            .getElementById("detail-section-container")
+            .classList.add("d-none");
+          document.getElementById("time-off-section").classList.add("d-none");
+          document.getElementById("buttons-section").classList.add("d-none");
+        }
+      }
+
+      function formatDate(date) {
+        const monthNames = [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
+        ];
+
+        const day = date.getDate();
+        const monthIndex = date.getMonth();
+        const monthName = monthNames[monthIndex];
+
+        return `${monthName} ${day}`;
+      }
+
+      function calculateWorkingDays(date1, date2) {
+        // Copy dates to avoid modifying the original objects
+        const startDate = new Date(date1);
+        const endDate = new Date(date2);
+
+        // Initialize counters
+        let workingDays = 0;
+        let nonWorkingDays = 0;
+        let totaldays = 0;
+
+        // Loop through each day between startDate and endDate
+        for (
+          let date = new Date(startDate);
+          date <= endDate;
+          date.setDate(date.getDate() + 1)
+        ) {
+          // Check if the day is Saturday (6) or Sunday (0)
+          if (date.getDay() === 6 || date.getDay() === 0) {
+            nonWorkingDays++;
+          } else {
+            workingDays++;
+          }
+        }
+
+        totalLeaveDays = workingDays + nonWorkingDays;
+        return { workingDays, nonWorkingDays, totalLeaveDays };
+      }
+
+         /*Dropdown Menu*/
+         $(".custom-select").click(function () {
+        $(this).attr("tabindex", 1).focus();
+        $(this).toggleClass("active");
+        $(this).find(".dropdown-menu").slideToggle(300);
+      });
+      $(".custom-select").focusout(function () {
+        $(this).removeClass("active");
+        $(this).find(".dropdown-menu").slideUp(300);
+      });
+      $(".custom-select .dropdown-menu li").click(function () {
+        $(this).parents(".custom-select").find("span").text($(this).text());
+        $(this)
+          .parents(".custom-select")
+          .find("input")
+          .attr("value", $(this).attr("id"));
+      });
+      /*End Dropdown Menu*/
+
+      $(".dropdown-menu li").click(function () {
+        var input =
+            "<strong>" +
+            $(this).parents(".custom-select").find("input").val() +
+            "</strong>",
+          msg = '<span class="msg">Hidden input value: ';
+        $(".msg").html(msg + input + "</span>");
+      });
+    </script>
+  </body>
+</html>

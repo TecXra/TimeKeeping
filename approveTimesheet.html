@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Approve Timesheets</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/approveTimesheet.css" />
+  </head>
+  <body>
+    <div class="head-bar"></div>
+    <header>
+      <div class="header-container">
+        <div class="d-flex">
+          <img class="header-logo" src="./images/headerLogo.png" height="50" width="124" />
+          <span class="header-logo-text">Time Keeping</span>
+      </div> 
+        <div class="profile">
+          <div class="username-container">
+            <h3 class="username">Keitlin Smith</h3>
+            <h3 class="user_type">Employee</h3>
+          </div>
+          <img
+            src="https://ui-avatars.com/api/?name=Keitlin+Smith&background=ABD780"
+            class="profile-pic"
+          />
+          <div class="dropdown-menu" id="dropdown">
+            <a href="./index.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="main-container">
+        <div class="head-section heading-section">
+          <a href="./landingPage.html" class="top-back-link">
+            <i class="fa-solid fa-arrow-left" style="margin-right: 6px"></i>Back
+          </a>
+          <h1 class="page-title">Approve Timesheets</h1>
+          <p class="page-description">Please approve employees timesheets.</p>
+        
+        </div>
+
+        <div>
+          <div class="heading-detail-section">
+            <p><strong>Total Employee:</strong> 08</p>
+            <p><strong>Manager:</strong> John Doe</p>
+          </div>
+          
+          <table class="employee_timesheet_table">
+            <thead>
+              <tr class="table-heading">
+                <th style="width: 50px"></th>
+                <th style="width: 250px">NAME</th>
+                <th style="width: 250px">EMPLOYEE ID</th>
+                <th style="width: 250px">TYPE</th>
+                <th style="width: 250px">TIMEPERIOD</th>
+                <th style="text-align: center">ACTION</th>
+              </tr>
+            </thead>
+            <tbody id="approve-timesheet-table-body"></tbody>
+          </table>
+
+         
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <p>
+          &copy; Borough of Manhattan Community College. All rights reserved
+        </p>
+      </div>
+    </footer>
+    <script>
+      $(document).ready(function () {
+        $(".profile-pic").click(function () {
+          $("#dropdown").toggle();
+        });
+        $(window).click(function (event) {
+          if (!$(event.target).closest(".profile").length) {
+            $("#dropdown").hide();
+          }
+        });
+      });
+
+      const tableData = [
+        {
+          id: 1,
+          name: "John Smith",
+          employeeId: "1234567890",
+          type: "Weekly",
+          timePeriod: "07-01-2023 - 07-07-2023",
+          actionImage:"./images/right-arrow.svg",
+          status:"",
+        },
+        {
+          id: 2,
+          name: "John Smith",
+          employeeId: "1234567890",
+          type: "Bi-Weekly",
+          timePeriod: "07-01-2023 - 07-07-2023",
+          actionImage:"./images/right-arrow.svg",
+          status:"",
+        },
+        {
+          id: 3,
+          name: "John Smith",
+          employeeId: "1234567890",
+          type: "Weekly",
+          timePeriod: "07-01-2023 - 07-07-2023",
+          actionImage:"./images/right-arrow.svg",
+          status:"",
+        },
+        {
+          id: 4,
+          name: "John Smith",
+          employeeId: "1234567890",
+          type: "Weekly",
+          timePeriod: "07-01-2023 - 07-07-2023",
+          actionImage:"./images/right-arrow.svg",
+          status:"",
+        },
+        {
+          id: 5,
+          name: "John Smith",
+          employeeId: "1234567890",
+          type: "Weekly",
+          timePeriod: "07-01-2023 - 07-07-2023",
+          actionImage:"./images/right-arrow.svg",
+          status:"",
+        },
+        {
+          id: 6,
+          name: "John Smith",
+          employeeId: "1234567890",
+          type: "Monthly",
+          timePeriod: "May 2023",
+          actionImage:"./images/right-arrow.svg",
+          status:"",
+        },
+        {
+          id: 7,
+          name: "John Smith",
+          employeeId: "1234567890",
+          type: "Monthly",
+          timePeriod: "May 2023",
+          actionImage:"./images/right-arrow.svg",
+          status:"",
+        },
+        {
+          id: 8,
+          name: "John Smith",
+          employeeId: "1234567890",
+          type: "Weekly",
+          timePeriod: "07-01-2023 - 07-07-2023",
+          actionImage:"./images/pending.png",
+          pendingText:"Pending",
+          status:"pending",
+        },
+      ];
+
+      const tableBody = document.getElementById("approve-timesheet-table-body");
+
+      tableData.forEach((employee, index) => {
+        const row = document.createElement("tr");
+        row.className =
+          index % 2 === 0
+            ?  employee.status === "pending" ? "table-row table-row-border status-pending-background" : "table-row table-row-border" 
+            :  employee.status === "pending" ? "table-row table-row-border status-pending-background" : "table-row table-row-background-color table-row-border";
+        row.id = `single-employee-row-${index + 1}`; 
+        row.innerHTML = `
+        <td style="width: 50px"></td>
+        <td id="employee-name-${index + 1}">${employee.name}</td>
+        <td id="employee-id-${index + 1}">${employee.employeeId}</td>
+        <td id="type-${index + 1}">${employee.type}</td>
+        <td id="timeperiod-${index + 1}">${employee.timePeriod}</td>       
+        <td style="text-align: center">
+          <img src="${employee.actionImage}" height="26" width="26" class="toggle-icon" style="margin-top:4px" data-row="${
+            index + 1
+          }" />
+          <span class="pending-text">${employee.pendingText ? employee.pendingText : ""}</span>
+        </td>
+      `;
+
+        tableBody.appendChild(row);
+
+        if (index === tableData.length - 1) {
+          row.classList.add("table-footer");
+          row.classList.remove("table-row-border");
+          row.classList.remove("table-row-background-color");
+        }
+      });
+
+      document.querySelectorAll(".toggle-icon").forEach((icon) => {
+      icon.addEventListener("click", function () {
+        const rowId = this.getAttribute("data-row");
+        const nameCell = document.querySelector(`#employee-name-${rowId}`);
+        const idCell = document.querySelector(`#employee-id-${rowId}`);
+        const typeCell = document.querySelector(`#type-${rowId}`);
+        const timeperiodCell = document.querySelector(`#timeperiod-${rowId}`);
+
+        if (nameCell && idCell && typeCell && timeperiodCell) {
+          const nameValue = nameCell.textContent;
+          const idValue = idCell.textContent;
+          const typeValue = typeCell.textContent;
+          const timeperiodValue = timeperiodCell.textContent;
+
+          const employeeDetails = {
+            id:rowId,
+            name: nameValue,
+            employeeId: idValue,
+            type: typeValue,
+            timeperiod: timeperiodValue,
+            tableName:"approveTimesheet"
+          };
+          // Save the object in localStorage
+          localStorage.setItem("employeeDetails", JSON.stringify(employeeDetails));
+
+          // Redirect to the next page
+          window.location.href = "detailPage.html";
+        } else {
+          console.error("One or more elements not found for row ID:", rowId);
+        }
+      });
+    });
+
+
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var checkbox = document.getElementById("checkbox");
+        var submitBtn = document.getElementById("submitBtn");
+
+        checkbox.addEventListener("change", function () {
+          if (checkbox.checked) {
+            submitBtn.removeAttribute("disabled");
+            submitBtn.classList.remove("btn-disabled");
+          } else {
+            submitBtn.setAttribute("disabled", "disabled");
+            submitBtn.classList.add("btn-disabled");
+          }
+        });
+      });
+
+      function changeStatus(selectedRadio) {
+        var table_count = $("#employee_timesheet_table tr.table-row").length;
+        for (let i = 1; i <= table_count; i++) {
+          var radio_name = "toggle-row-" + i;
+          var radioInputs = document.getElementsByName(radio_name);
+          radioInputs.forEach(function (input) {
+            if (input.value == selectedRadio.value) {
+              input.checked = true;
+            }
+          });
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const selectElement = document.getElementById(
+          "custom-week-list-approve-timesheet"
+        );
+        const dropdownMenu = document.getElementById("dropdown-menu");
+        const selectedValueElement = document.getElementById("selected-value");
+        const hiddenInputElement = document.getElementById("hidden-input");
+
+        function formatDate(date) {
+          const month = String(date.getMonth() + 1).padStart(2, "0");
+          const day = String(date.getDate()).padStart(2, "0");
+          return `${month}/${day}`;
+        }
+        // Generate week options from current date to next five weeks
+        const today = new Date();
+        for (let i = 0; i < 5; i++) {
+          const startDate = new Date(today);
+          startDate.setDate(startDate.getDate() + i * 7);
+          const endDate = new Date(startDate);
+          endDate.setDate(endDate.getDate() + 6);
+
+          const startDateString = formatDate(startDate);
+          const endDateString = formatDate(endDate);
+          const optionText = `${startDateString} - ${endDateString}`;
+
+          const li = document.createElement("li");
+          li.setAttribute("value", i + 1);
+          li.textContent = optionText;
+          li.addEventListener("click", function () {
+            showApproveTimeSheetTableData(optionText);
+          });
+
+          dropdownMenu.appendChild(li);
+        }
+      });
+
+      function showApproveTimeSheetTableData(value) {
+        // const hiddenInput = document.getElementById('hidden-input');
+        const selectedValueElement = document.getElementById("selected-value");
+        selectedValueElement.textContent = value; // Update the displayed selected text
+
+        if (value !== "null" && value !== "") {
+          document
+            .getElementById("table-section-container")
+            .classList.add("d-block");
+          document
+            .getElementById("table-section-container")
+            .classList.remove("d-none");
+        } else {
+          document
+            .getElementById("table-section-container")
+            .classList.remove("d-block");
+          document
+            .getElementById("table-section-container")
+            .classList.add("d-none");
+        }
+      }
+      /*Dropdown Menu*/
+      $(".custom-select").click(function () {
+        $(this).attr("tabindex", 1).focus();
+        $(this).toggleClass("active");
+        $(this).find(".dropdown-menu").slideToggle(300);
+      });
+      $(".custom-select").focusout(function () {
+        $(this).removeClass("active");
+        $(this).find(".dropdown-menu").slideUp(300);
+      });
+      $(".custom-select .dropdown-menu li").click(function () {
+        $(this).parents(".custom-select").find("span").text($(this).text());
+        $(this)
+          .parents(".custom-select")
+          .find("input")
+          .attr("value", $(this).attr("id"));
+      });
+      /*End Dropdown Menu*/
+
+      $(".dropdown-menu li").click(function () {
+        var input =
+            "<strong>" +
+            $(this).parents(".custom-select").find("input").val() +
+            "</strong>",
+          msg = '<span class="msg">Hidden input value: ';
+        $(".msg").html(msg + input + "</span>");
+      });
+    </script>
+  </body>
+</html>
